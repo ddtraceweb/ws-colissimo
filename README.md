@@ -1,4 +1,4 @@
-WSColiPosteLetterService Client Library
+WSColiPosteLetterService Client Library Meup Edition
 =======================================
 
 ![Project Status](http://stillmaintained.com/lexik/ws-colissimo.png)
