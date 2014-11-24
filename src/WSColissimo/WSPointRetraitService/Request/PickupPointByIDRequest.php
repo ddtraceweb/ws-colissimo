@@ -2,15 +2,18 @@
 
 namespace WSColissimo\WSPointRetraitService\Request;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+
 /**
  * PickupPointByIdRequest
  *
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class PickupPointByIdRequest
+class PickupPointByIDRequest
 {
     /**
-     * @var integer
+     * @var string
      */
     protected $accountNumber;
 
@@ -51,7 +54,7 @@ class PickupPointByIdRequest
 
     /**
      * Constructor
-     * @param integer  $accountNumber
+     * @param string  $accountNumber
      * @param string  $password
      * @param string  $id
      * @param string  $reseau
@@ -67,13 +70,13 @@ class PickupPointByIdRequest
         $this->id = $id;
         $this->reseau = $reseau;
         $this->weight = $weight;
-        $this->date = $date;
+        $this->date = (($date !== null)? $date->format('d/m/Y'): null);
         $this->filterRelay = $filterRelay;
         $this->langue = $langue;
     }
 
     /**
-     * @return integer
+     * @return string
      */
     public function getAccountNumber()
     {
@@ -81,7 +84,7 @@ class PickupPointByIdRequest
     }
 
     /**
-     * @param integer $accountNumber
+     * @param string $accountNumber
      *
      * @return self
      */
@@ -264,7 +267,7 @@ class PickupPointByIdRequest
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('accountNumber', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('accountNumber', new Assert\Type(array('type' => 'integer')));
+        // $metadata->addPropertyConstraint('accountNumber', new Assert\Type(array('type' => 'integer')));
         $metadata->addPropertyConstraint('accountNumber', new Assert\Regex(array('pattern' => '/^[0-9]{6}$/')));
 
         $metadata->addPropertyConstraint('password', new Assert\NotBlank());
@@ -280,7 +283,8 @@ class PickupPointByIdRequest
         $metadata->addPropertyConstraint('weight', new Assert\Range(array('min' => 1, 'max' => 30000)));
 
         $metadata->addPropertyConstraint('date', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('date', new Assert\DateTime());
+        // $metadata->addPropertyConstraint('date', new Assert\DateTime());
+        $metadata->addPropertyConstraint('date', new Assert\Regex(array('pattern' => '/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/')));
 
         $metadata->addPropertyConstraint('filterRelay', new Assert\Type(array('type' => 'integer')));
         $metadata->addPropertyConstraint('filterRelay', new Assert\Range(array('min' => 0, 'max' => 1)));
