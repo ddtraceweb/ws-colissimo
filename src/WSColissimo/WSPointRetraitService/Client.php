@@ -44,6 +44,6 @@ class Client implements ClientInterface
      */
     public function findPointRetraitAcheminementByID(PointRetraitAcheminementByIDRequest $request)
     {
-        return $this->soapClient->__soapCall('findRDVPointRetraitAcheminement', array($request));
+        return $this->soapClient->__soapCall('findPointRetraitAcheminementByID', array($request));
     }
 }

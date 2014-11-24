@@ -18,13 +18,12 @@ class SoapClientFactory
      * @var array
      */
     protected $classmap = array(
-        'findRDVPointRetraitAcheminement'    => '\WSColissimo\WSPointRetraitService\Request\FindRDVPointRetraitAcheminementRequest',
-        'findRDVPointRetraitAcheminement'    => '\WSColissimo\WSPointRetraitService\Request\RDVPRRequest',
-        'findPointRetraitAcheminementByID'   => '\WSColissimo\WSPointRetraitService\Request\FindPointRetraitAcheminementByIDRequest',
-        'conges'                             => '\WSColissimo\WSPointRetraitService\Response\ValueObject\Conges',
-        'pointRetraitAcheminement'           => '\WSColissimo\WSPointRetraitService\Response\ValueObject\PointRetraitAcheminement',
-        'rdvPointRetraitAcheminementResult'  => '\WSColissimo\WSPointRetraitService\Response\FindRDVPointRetraitAcheminementResponse',
-        'pointRetraitAcheminementByIDResult' => '\WSColissimo\WSPointRetraitService\Response\PointRetraitAcheminementByIDResponse',
+        'findRDVPointRetraitAcheminement'    => '\WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest',
+        'findPointRetraitAcheminementByID'   => '\WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest',
+        // 'conges'                             => '\WSColissimo\WSPointRetraitService\Response\ValueObject\Conges',
+        // 'pointRetraitAcheminement'           => '\WSColissimo\WSPointRetraitService\Response\ValueObject\PointRetraitAcheminement',
+        // 'rdvPointRetraitAcheminementResult'  => '\WSColissimo\WSPointRetraitService\Response\FindRDVPointRetraitAcheminementResponse',
+        // 'pointRetraitAcheminementByIDResult' => '\WSColissimo\WSPointRetraitService\Response\PointRetraitAcheminementByIDResponse',
     );
 
     /**
