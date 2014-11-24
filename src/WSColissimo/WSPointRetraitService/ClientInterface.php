@@ -2,10 +2,10 @@
 
 namespace WSColissimo\WSPointRetraitService;
 
-use WSColissimo\WSPointRetraitService\Request\RDVPointRetraitAcheminementRequest;
-use WSColissimo\WSPointRetraitService\Request\PointRetraitAcheminementByIDRequest;
-use WSColissimo\WSPointRetraitService\Request\RDVPointRetraitAcheminementResponse;
-use WSColissimo\WSPointRetraitService\Request\PointRetraitAcheminementByIDResponse;
+use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
+use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
+use WSColissimo\WSPointRetraitService\Request\RDVPickupPointResponse;
+use WSColissimo\WSPointRetraitService\Request\PickupPointByIDResponse;
 
 /**
  * ClientInterface for the WSPointRetraitService
@@ -17,18 +17,18 @@ interface ClientInterface
     /**
      * Ask for the available pickup points and rendezvous disponibility
      *
-     * @param RDVPointRetraitAcheminementRequest $request
+     * @param RDVPickupPointRequest $request
      *
-     * @return RDVPointRetraitAcheminementResponse
+     * @return RDVPickupPointResponse
      */
-    public function findRDVPointRetraitAcheminement(RDVPointRetraitAcheminementRequest $request);
+    public function findRDVPointRetraitAcheminement(RDVPickupPointRequest $request);
 
     /**
      * Ask for a pickup point from its id
      *
-     * @param PointRetraitAcheminementByIDRequest $request
+     * @param PickupPointByIDRequest $request
      *
-     * @return PointRetraitAcheminementByIDResponse
+     * @return PickupPointByIDResponse
      */
-    public function findPointRetraitAcheminementByID(PointRetraitAcheminementByIDRequest $request);
+    public function findPointRetraitAcheminementByID(PickupPointByIDRequest $request);
 }

@@ -35,7 +35,7 @@ class PickupPointByIdRequest
     protected $weight;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     protected $date;
 
@@ -60,7 +60,7 @@ class PickupPointByIdRequest
      * @param integer $filterRelay
      * @param string  $langue
      */
-    public function __construct($accountNumber = null, $password = null, $id = null, $reseau = null, $weight = null, $date = null, $filterRelay = 1, $langue = FR)
+    public function __construct($accountNumber = null, $password = null, $id = null, $reseau = null, $weight = null, \DateTime $date = null, $filterRelay = 1, $langue = 'FR')
     {
         $this->accountNumber = $accountNumber;
         $this->password = $password;
@@ -191,7 +191,7 @@ class PickupPointByIdRequest
      */
     public function getDate()
     {
-        return $this->date;
+        return new \DateTime($this->date);
     }
 
     /**
@@ -201,9 +201,9 @@ class PickupPointByIdRequest
      *
      * @return self
      */
-    public function setDate($date)
+    public function setDate(\DateTime $date)
     {
-        $this->date = $date;
+        $this->date = $date->format('d/m/Y');
 
         return $this;
     }
@@ -237,7 +237,7 @@ class PickupPointByIdRequest
      *
      * @return string
      */
-    public function getLangue()
+    public function getLang()
     {
         return $this->langue;
     }
@@ -249,7 +249,7 @@ class PickupPointByIdRequest
      *
      * @return self
      */
-    public function setLangue($langue)
+    public function setLang($langue)
     {
         $this->langue = $langue;
 

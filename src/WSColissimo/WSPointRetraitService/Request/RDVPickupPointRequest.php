@@ -2,6 +2,9 @@
 
 namespace WSColissimo\WSPointRetraitService\Request;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+
 /**
  * RDVPickupPointRequest
  *
@@ -45,7 +48,7 @@ class RDVPickupPointRequest
     protected $weight;
 
     /**
-     * @var \DateTime
+     * @var string : ws doesn't use dateTime on request...
      */
     protected $shippingDate;
 
@@ -74,7 +77,7 @@ class RDVPickupPointRequest
      * @param integer  $accountNumber
      * @param string  $password
      * @param string  $address
-     * @param string  $zipcode
+     * @param string  $zipCode
      * @param string  $city
      * @param string  $countryCode
      * @param integer  $weight
@@ -84,16 +87,16 @@ class RDVPickupPointRequest
      * @param string  $lang
      * @param integer $optionInter
      */
-    public function __construct($accountNumber = null, $password = null, $address = null, $zipcode = null, $city = null, $countryCode = null, $weight = null, $shippingDate = null, $filterRelay = 1, $requestId = null, $lang = FR, $optionInter = 0)
+    public function __construct($accountNumber = null, $password = null, $address = null, $zipCode = null, $city = null, $countryCode = null, $weight = null, \DateTime $shippingDate = null, $filterRelay = 1, $requestId = null, $lang = 'FR', $optionInter = 0)
     {
         $this->accountNumber = $accountNumber;
         $this->password = $password;
         $this->address = $address;
-        $this->zipcode = $zipcode;
+        $this->zipCode = $zipCode;
         $this->city = $city;
         $this->countryCode = $countryCode;
         $this->weight = $weight;
-        $this->shippingDate = $shippingDate;
+        $this->shippingDate = (($shippingDate !== null)? $shippingDate->format('d/m/Y'): null);
         $this->filterRelay = $filterRelay;
         $this->requestId = $requestId;
         $this->lang = $lang;
@@ -267,7 +270,7 @@ class RDVPickupPointRequest
      */
     public function getShippingDate()
     {
-        return $this->shippingDate;
+        return new \DateTime($this->shippingDate);
     }
 
     /**
@@ -277,9 +280,9 @@ class RDVPickupPointRequest
      *
      * @return self
      */
-    public function setShippingDate($shippingDate)
+    public function setShippingDate(\DateTime $shippingDate)
     {
-        $this->shippingDate = $shippingDate;
+        $this->shippingDate = $shippingDate->format('d/m/Y');
 
         return $this;
     }
@@ -411,7 +414,8 @@ class RDVPickupPointRequest
         $metadata->addPropertyConstraint('weight', new Assert\Range(array('min' => 1, 'max' => 30000)));
 
         $metadata->addPropertyConstraint('shippingDate', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('shippingDate', new Assert\DateTime());
+        // $metadata->addPropertyConstraint('shippingDate', new Assert\DateTime());
+        $metadata->addPropertyConstraint('shippingDate', new Assert\Regex(array('pattern' => '/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/')));
 
         $metadata->addPropertyConstraint('filterRelay', new Assert\Type(array('type' => 'integer')));
         $metadata->addPropertyConstraint('filterRelay', new Assert\Range(array('min' => 0, 'max' => 1)));

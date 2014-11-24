@@ -1,13 +1,13 @@
 <?php
 
-namespace WSColissimo\WSColiPosteLetterService\Util;
+namespace WSColissimo\WSPointRetraitService\Util;
 
 /**
  * ServiceAvailability Checker
  *
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class ServiceAvailability extends WSColissimo\WSColiPosteLetterService\Util\ServiceAvailability;
+class ServiceAvailability extends \WSColissimo\WSColiPosteLetterService\Util\ServiceAvailability
 {
     /**
      * Constructor

@@ -2,34 +2,34 @@
 
 namespace WSColissimo\WSPointRetraitService\Response;
 
-// use WSColissimo\WSPointRetraitService\Response\ValueObject\ReturnLetter;
+use WSColissimo\WSPointRetraitService\Response\ValueObject\RDVPickupPointResult;
 
 /**
  * RDVPickupPointResponse
  *
- * @author @author Nicolas Cabot <n.cabot@lexik.fr>
+ * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
 class RDVPickupPointResponse
 {
     /**
-     * @var ReturnLetter
+     * @var RDVPickupPointResult
      */
-    protected $returnLetter;
+    protected $RDVPickupPointResult;
 
     /**
-     * @return ReturnLetter
+     * @return RDVPickupPointResult
      */
-    public function getReturn()
+    public function getRDVPickupPointResult()
     {
-        return $this->returnLetter;
+        return $this->RDVPickupPointResult;
     }
 
     /**
-     * @param ReturnLetter $returnLetter
+     * @param RDVPickupPointResult $RDVPickupPointResult
      */
-    public function setReturnLetter(ReturnLetter $returnLetter)
+    public function setRDVPickupPointResult(RDVPickupPointResult $RDVPickupPointResult)
     {
-        $this->returnLetter = $returnLetter;
+        $this->RDVPickupPointResult = $RDVPickupPointResult;
     }
 
     /**
@@ -39,8 +39,8 @@ class RDVPickupPointResponse
      */
     public function isSuccess()
     {
-        if ($this->returnLetter instanceof ReturnLetter
-                && $this->returnLetter->errorID === 0) {
+        if ($this->RDVPickupPointResult instanceof RDVPickupPointResult
+                && $this->RDVPickupPointResult->getErrorCode() === 0) {
             return true;
         }
 
@@ -54,9 +54,9 @@ class RDVPickupPointResponse
      */
     public function getErrorMessage()
     {
-        if ($this->returnLetter instanceof ReturnLetter
-                && $this->returnLetter->errorID !== 0) {
-            return $this->returnLetter->error;
+        if ($this->RDVPickupPointResult instanceof RDVPickupPointResult
+                && $this->RDVPickupPointResult->getErrorCode() !== 0) {
+            return $this->RDVPickupPointResult->getErrorMessage();
         }
     }
 
@@ -68,8 +68,8 @@ class RDVPickupPointResponse
      */
     public function __set($name, $value)
     {
-        if ($name === 'getLetterColissimoReturn') {
-            return $this->setReturnLetter($value);
+        if ($name === 'return') {
+            return $this->setRDVPickupPointResult($value);
         }
     }
 

@@ -2,8 +2,8 @@
 
 namespace WSColissimo\WSPointRetraitService;
 
-use WSColissimo\WSPointRetraitService\Request\RDVPointRetraitAcheminementRequest;
-use WSColissimo\WSPointRetraitService\Request\PointRetraitAcheminementByIDRequest;
+use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
+use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
 
 /**
  * A client for the WSPointRetraitService
@@ -33,7 +33,7 @@ class Client implements ClientInterface
      * (non-PHPdoc)
      * @see \WSColissimo\WSPointRetraitService\ClientInterface::findRDVPointRetraitAcheminement()
      */
-    public function findRDVPointRetraitAcheminement(RDVPointRetraitAcheminementRequest $request)
+    public function findRDVPointRetraitAcheminement(RDVPickupPointRequest $request)
     {
         return $this->soapClient->__soapCall('findRDVPointRetraitAcheminement', array($request));
     }
@@ -42,7 +42,7 @@ class Client implements ClientInterface
      * (non-PHPdoc)
      * @see \WSColissimo\WSPointRetraitService\ClientInterface::findPointRetraitAcheminementByID()
      */
-    public function findPointRetraitAcheminementByID(PointRetraitAcheminementByIDRequest $request)
+    public function findPointRetraitAcheminementByID(PickupPointByIDRequest $request)
     {
         return $this->soapClient->__soapCall('findPointRetraitAcheminementByID', array($request));
     }
