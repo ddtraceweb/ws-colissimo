@@ -2,6 +2,7 @@
 
 namespace WSColissimo\WSColiPosteLetterService;
 
+use WSColissimo\Common\Credentials;
 use WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest;
 
 /**
@@ -19,13 +20,20 @@ class Client implements ClientInterface
     protected $soapClient;
 
     /**
+     * Account number and password container
+     * @var Credentials
+     */
+    protected $credentials;
+
+    /**
      * Construct SO Flexibilite SOAP client
      *
      * @param \SoapClient $soapClient
      */
-    public function __construct(\SoapClient $soapClient)
+    public function __construct(\SoapClient $soapClient, Credentials $credentials)
     {
         $this->soapClient = $soapClient;
+        $this->credentials = $credentials;
     }
 
     /**
@@ -34,6 +42,17 @@ class Client implements ClientInterface
      */
     public function getLetterColissimo(LetterColissimoRequest $request)
     {
+        if(empty($request->getLetter()->getContractNumber()) || empty($request->getLetter()->getPassword())) {
+
+            $this->setCredentials($this->credentials);
+        }
+
         return $this->soapClient->__soapCall('getLetterColissimo', array($request));
+    }
+
+    public function setCredentials($request)
+    {
+        $request->getLetter()->setContractNumber($this->credentials->getAccountNumber());
+        $request->getLetter()->setPassword($this->credentials->getPassword());
     }
 }

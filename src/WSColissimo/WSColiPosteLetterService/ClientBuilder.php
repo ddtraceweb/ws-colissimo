@@ -2,6 +2,7 @@
 
 namespace WSColissimo\WSColiPosteLetterService;
 
+use WSColissimo\Common\Credentials;
 use WSColissimo\WSColiPosteLetterService\Soap\SoapClientFactory;
 
 /**
@@ -24,11 +25,12 @@ class ClientBuilder
      *
      * @return Client
      */
-    public function build()
+    public function build($accountNumber, $password)
     {
         $soapClientFactory = new SoapClientFactory();
         $soapClient = $soapClientFactory->create($this->wsdl);
+        $credentials = new Credentials($accountNumber, $password);
 
-        return new Client($soapClient);
+        return new Client($soapClient, $credentials);
     }
 }

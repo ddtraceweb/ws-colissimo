@@ -87,20 +87,13 @@ class RDVPickupPointRequest
      * @param string  $lang
      * @param integer $optionInter
      */
-    public function __construct($accountNumber = null, $password = null, $address = null, $zipCode = null, $city = null, $countryCode = null, $weight = null, \DateTime $shippingDate = null, $filterRelay = 1, $requestId = null, $lang = 'FR', $optionInter = 0)
+    public function __construct($accountNumber = null, $password = null)
     {
         $this->accountNumber = $accountNumber;
         $this->password = $password;
-        $this->address = $address;
-        $this->zipCode = $zipCode;
-        $this->city = $city;
-        $this->countryCode = $countryCode;
-        $this->weight = $weight;
-        $this->shippingDate = (($shippingDate !== null)? $shippingDate->format('d/m/Y'): null);
-        $this->filterRelay = $filterRelay;
-        $this->requestId = $requestId;
-        $this->lang = $lang;
-        $this->optionInter = $optionInter;
+        $this->filterRelay = 1;
+        $this->lang = 'FR';
+        $this->optionInter = 0;
     }
 
     /**

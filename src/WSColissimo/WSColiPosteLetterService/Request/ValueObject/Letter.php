@@ -47,6 +47,8 @@ class Letter
      */
     protected $profil;
 
+    public function __construct
+
     /**
      * @return integer
      */

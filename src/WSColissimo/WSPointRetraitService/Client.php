@@ -2,8 +2,9 @@
 
 namespace WSColissimo\WSPointRetraitService;
 
-use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
+use WSColissimo\Common\Credentials;
 use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
+use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
 
 /**
  * A client for the WSPointRetraitService
@@ -20,13 +21,20 @@ class Client implements ClientInterface
     protected $soapClient;
 
     /**
+     * Account number and password container
+     * @var Credentials
+     */
+    protected $credentials;
+
+    /**
      * Construct SO Flexibilite SOAP client
      *
      * @param \SoapClient $soapClient
      */
-    public function __construct(\SoapClient $soapClient)
+    public function __construct(\SoapClient $soapClient, Credentials $credentials)
     {
         $this->soapClient = $soapClient;
+        $this->credentials = $credentials;
     }
 
     /**
@@ -35,6 +43,10 @@ class Client implements ClientInterface
      */
     public function findRDVPointRetraitAcheminement(RDVPickupPointRequest $request)
     {
+        if(empty($request->getAccountNumber()) || empty($request->getPassword())) {
+            $this->setCredentials($request);
+        }
+
         return $this->soapClient->__soapCall('findRDVPointRetraitAcheminement', array($request));
     }
 
@@ -44,6 +56,15 @@ class Client implements ClientInterface
      */
     public function findPointRetraitAcheminementByID(PickupPointByIDRequest $request)
     {
+        if(empty($request->getAccountNumber()) || empty($request->getPassword())) {
+            $this->setCredentials($request);
+        }
+
         return $this->soapClient->__soapCall('findPointRetraitAcheminementByID', array($request));
+    }
+
+    public function setCredentials($request) {
+        $request->setAccountNumber($this->credentials->getAccountNumber());
+        $request->setPassword($this->credentials->getPassword());
     }
 }
