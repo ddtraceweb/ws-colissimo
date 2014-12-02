@@ -19,6 +19,12 @@ class Credentials
      */
     private $password;
 
+    public function __construct($accountNumber, $password)
+    {
+        $this->accountNumber = $accountNumber;
+        $this->password = $password;
+    }
+
     /**
      * Getter for accountNumber
      *

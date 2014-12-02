@@ -18,8 +18,8 @@ class SoapClientFactory
      * @var array
      */
     protected $classmap = array(
-        'findRDVPointRetraitAcheminement'           => '\WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest',
-        'findPointRetraitAcheminementByID'          => '\WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest',
+        // 'findRDVPointRetraitAcheminement'           => '\WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest',
+        // 'findPointRetraitAcheminementByID'          => '\WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest',
         'Conges'                                    => '\WSColissimo\WSPointRetraitService\Response\ValueObject\Vacation',
         'pointRetraitAcheminement'                  => '\WSColissimo\WSPointRetraitService\Response\ValueObject\PickupPoint',
         'pointRetraitAcheminementResult'            => '\WSColissimo\WSPointRetraitService\Response\ValueObject\RDVPickupPointResult',

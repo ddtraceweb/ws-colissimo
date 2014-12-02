@@ -4,13 +4,14 @@ namespace WSColissimo\WSPointRetraitService\Request;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use WSColissimo\Common\Request\RequestInterface;
 
 /**
  * RDVPickupPointRequest
  *
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class RDVPickupPointRequest
+class RDVPickupPointRequest implements RequestInterface
 {
     /**
      * @var string
@@ -74,23 +75,9 @@ class RDVPickupPointRequest
 
     /**
      * Constructor
-     * @param integer  $accountNumber
-     * @param string  $password
-     * @param string  $address
-     * @param string  $zipCode
-     * @param string  $city
-     * @param string  $countryCode
-     * @param integer  $weight
-     * @param \DateTime  $shippingDate
-     * @param integer $filterRelay
-     * @param string  $requestId
-     * @param string  $lang
-     * @param integer $optionInter
      */
-    public function __construct($accountNumber = null, $password = null)
+    public function __construct()
     {
-        $this->accountNumber = $accountNumber;
-        $this->password = $password;
         $this->filterRelay = 1;
         $this->lang = 'FR';
         $this->optionInter = 0;
@@ -237,7 +224,7 @@ class RDVPickupPointRequest
      *
      * @return integer
      */
-    public function getWeight()
+    public function getCountryCode()
     {
         return $this->weight;
     }
@@ -261,9 +248,19 @@ class RDVPickupPointRequest
      *
      * @return \DateTime
      */
-    public function getShippingDate()
+    public function getShippingDateAsDateTime()
     {
         return new \DateTime($this->shippingDate);
+    }
+
+    /**
+     * Getter for shippingDate
+     *
+     * @return string
+     */
+    public function getShippingDate()
+    {
+        return $this->shippingDate;
     }
 
     /**
@@ -435,5 +432,44 @@ class RDVPickupPointRequest
         if (method_exists($this, $method)) {
             return $this->$method();
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getContent()
+    {
+        return array(
+            'accountNumber' => $this->getAccountNumber(),
+            'password'      => $this->getPassword(),
+            'address'       => $this->getAddress(),
+            'zipCode'       => $this->getZipCode(),
+            'city'          => $this->getCity(),
+            'countryCode'   => $this->getCountryCode(),
+            'weight'        => $this->getWeight(),
+            'shippingDate'  => $this->getShippingDate(),
+            'filterRelay'   => $this->getFilterRelay(),
+            'requestId'     => $this->getRequestId(),
+            'lang'          => $this->getLang(),
+            'optionInter'   => $this->getOptionInter(),
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'findRDVPointRetraitAcheminement';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setCredentials(Credentials $credentials)
+    {
+        $this->credentials = $credentials;
+        $this->setAccountNumber($credentials->getAccountNumber());
+        $this->setPassword($credentials->getPassword());
     }
 }

@@ -4,13 +4,14 @@ namespace WSColissimo\WSPointRetraitService\Request;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use WSColissimo\Common\Request\RequestInterface;
 
 /**
  * PickupPointByIdRequest
  *
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class PickupPointByIDRequest
+class PickupPointByIDRequest implements RequestInterface
 {
     /**
      * @var string
@@ -54,25 +55,11 @@ class PickupPointByIDRequest
 
     /**
      * Constructor
-     * @param string  $accountNumber
-     * @param string  $password
-     * @param string  $id
-     * @param string  $reseau
-     * @param integer  $weight
-     * @param \DateTime  $date
-     * @param integer $filterRelay
-     * @param string  $langue
      */
-    public function __construct($accountNumber = null, $password = null, $id = null, $reseau = null, $weight = null, \DateTime $date = null, $filterRelay = 1, $langue = 'FR')
+    public function __construct()
     {
-        $this->accountNumber = $accountNumber;
-        $this->password = $password;
-        $this->id = $id;
-        $this->reseau = $reseau;
-        $this->weight = $weight;
-        $this->date = (($date !== null)? $date->format('d/m/Y'): null);
-        $this->filterRelay = $filterRelay;
-        $this->langue = $langue;
+        $this->filterRelay = 1;
+        $this->langue = 'FR';
     }
 
     /**
@@ -192,9 +179,19 @@ class PickupPointByIDRequest
      *
      * @return \DateTime
      */
-    public function getDate()
+    public function getDateAsDateTime()
     {
         return new \DateTime($this->date);
+    }
+
+    /**
+     * Getter for date
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 
     /**
@@ -305,5 +302,38 @@ class PickupPointByIDRequest
         if (method_exists($this, $method)) {
             return $this->$method();
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getContent()
+    {
+        return array(
+            'accountNumber' => $this->getAccountNumber(),
+            'password'      => $this->getPassword(),
+            'weight'        => $this->getWeight(),
+            'date'          => $this->getDate(),
+            'filterRelay'   => $this->getFilterRelay(),
+            'langue'        => $this->getLang(),
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod()
+    {
+        return 'findPointRetraitAcheminementByID';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setCredentials(Credentials $credentials)
+    {
+        $this->credentials = $credentials;
+        $this->setAccountNumber($credentials->getAccountNumber());
+        $this->setPassword($credentials->getPassword());
     }
 }
