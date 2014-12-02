@@ -2,7 +2,6 @@
 
 namespace WSColissimo\WSPointRetraitService;
 
-use WSColissimo\Common\Model\Credentials;
 use WSColissimo\WSPointRetraitService\Soap\SoapClientFactory;
 
 /**
@@ -25,12 +24,11 @@ class ClientBuilder
      *
      * @return Client
      */
-    public function build($accountNumber, $password)
+    public function build()
     {
         $soapClientFactory = new SoapClientFactory();
         $soapClient = $soapClientFactory->create($this->wsdl);
-        $credentials = new Credentials($accountNumber, $password);
 
-        return new Client($soapClient, $credentials);
+        return new Client($soapClient);
     }
 }
