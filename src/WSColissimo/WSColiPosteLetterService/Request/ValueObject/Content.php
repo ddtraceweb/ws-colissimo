@@ -33,6 +33,8 @@ class Content
     public function setArticle($article)
     {
         $this->article = $article;
+
+        return $this;
     }
 
     /**
@@ -49,6 +51,8 @@ class Content
     public function setCategorie($categorie)
     {
         $this->categorie = $categorie;
+
+        return $this;
     }
 
     /**

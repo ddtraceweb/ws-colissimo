@@ -63,6 +63,8 @@ class Letter
     public function setContractNumber($contractNumber)
     {
         $this->contractNumber = (int) $contractNumber;
+
+        return $this;
     }
 
     /**
@@ -79,6 +81,8 @@ class Letter
     public function setPassword($password)
     {
         $this->password = $password;
+
+        return $this;
     }
 
     /**
@@ -95,6 +99,8 @@ class Letter
     public function setService(ServiceCallContext $service)
     {
         $this->service = $service;
+
+        return $this;
     }
 
     /**
@@ -111,6 +117,8 @@ class Letter
     public function setParcel(Parcel $parcel)
     {
         $this->parcel = $parcel;
+
+        return $this;
     }
 
     /**
@@ -127,6 +135,8 @@ class Letter
     public function setDest(DestEnv $dest)
     {
         $this->dest = $dest;
+
+        return $this;
     }
 
     /**
@@ -143,6 +153,8 @@ class Letter
     public function setExp(ExpEnv $exp)
     {
         $this->exp = $exp;
+
+        return $this;
     }
 
     /**
@@ -159,6 +171,8 @@ class Letter
     public function setProfil($profil)
     {
         $this->profil = $profil;
+
+        return $this;
     }
 
     /**

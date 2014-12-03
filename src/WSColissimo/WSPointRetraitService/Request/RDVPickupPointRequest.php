@@ -4,6 +4,7 @@ namespace WSColissimo\WSPointRetraitService\Request;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use WSColissimo\Common\Credentials;
 use WSColissimo\Common\Request\RequestInterface;
 
 /**
@@ -224,7 +225,7 @@ class RDVPickupPointRequest implements RequestInterface
      *
      * @return integer
      */
-    public function getCountryCode()
+    public function getWeight()
     {
         return $this->weight;
     }

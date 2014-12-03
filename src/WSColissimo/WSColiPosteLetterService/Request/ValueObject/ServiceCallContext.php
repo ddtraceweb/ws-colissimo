@@ -143,6 +143,8 @@ class ServiceCallContext
     public function setDateDeposite(\DateTime $dateDeposite = null)
     {
         $this->dateDeposite = $dateDeposite;
+
+        return $this;
     }
 
     /**
@@ -159,6 +161,8 @@ class ServiceCallContext
     public function setDateValidation(\DateTime $dateValidation = null)
     {
         $this->dateValidation = $dateValidation;
+
+        return $this;
     }
 
     /**
@@ -175,6 +179,8 @@ class ServiceCallContext
     public function setReturnType($returnType)
     {
         $this->returnType = $returnType;
+
+        return $this;
     }
 
     /**
@@ -191,6 +197,8 @@ class ServiceCallContext
     public function setServiceType($serviceType)
     {
         $this->serviceType = $serviceType;
+
+        return $this;
     }
 
     /**
@@ -207,6 +215,8 @@ class ServiceCallContext
     public function setCrbt($crbt)
     {
         $this->crbt = $crbt;
+
+        return $this;
     }
 
     /**
@@ -223,6 +233,8 @@ class ServiceCallContext
     public function setCrbtAmount($crbtAmount)
     {
         $this->crbtAmount = $crbtAmount;
+
+        return $this;
     }
 
     /**
@@ -239,6 +251,8 @@ class ServiceCallContext
     public function setVATCode($VATCode)
     {
         $this->VATCode = $VATCode;
+
+        return $this;
     }
 
     /**
@@ -255,6 +269,8 @@ class ServiceCallContext
     public function setVATPercentage($VATPercentage)
     {
         $this->VATPercentage = $VATPercentage;
+
+        return $this;
     }
 
     /**
@@ -271,6 +287,8 @@ class ServiceCallContext
     public function setVATAmount($VATAmount)
     {
         $this->VATAmount = $VATAmount;
+
+        return $this;
     }
 
     /**
@@ -287,6 +305,8 @@ class ServiceCallContext
     public function setTransportationAmount($transportationAmount)
     {
         $this->transportationAmount = $transportationAmount;
+
+        return $this;
     }
 
     /**
@@ -303,6 +323,8 @@ class ServiceCallContext
     public function setTotalAmount($totalAmount)
     {
         $this->totalAmount = $totalAmount;
+
+        return $this;
     }
 
     /**
@@ -319,6 +341,8 @@ class ServiceCallContext
     public function setPortPaye($portPaye)
     {
         $this->portPaye = $portPaye;
+
+        return $this;
     }
 
     /**
@@ -335,6 +359,8 @@ class ServiceCallContext
     public function setFTD($FTD)
     {
         $this->FTD = $FTD;
+
+        return $this;
     }
 
     /**
@@ -351,6 +377,8 @@ class ServiceCallContext
     public function setFTDAmount($FTDAmount)
     {
         $this->FTDAmount = $FTDAmount;
+
+        return $this;
     }
 
     /**
@@ -367,6 +395,8 @@ class ServiceCallContext
     public function setReturnOption($returnOption)
     {
         $this->returnOption = $returnOption;
+
+        return $this;
     }
 
     /**
@@ -383,6 +413,8 @@ class ServiceCallContext
     public function setReturnOptionAmmount($returnOptionAmmount)
     {
         $this->returnOptionAmmount = $returnOptionAmmount;
+
+        return $this;
     }
 
     /**
@@ -399,6 +431,8 @@ class ServiceCallContext
     public function setCommandNumber($commandNumber)
     {
         $this->commandNumber = $commandNumber;
+
+        return $this;
     }
 
     /**
@@ -415,6 +449,8 @@ class ServiceCallContext
     public function setMotiveBack($motiveBack)
     {
         $this->motiveBack = $motiveBack;
+
+        return $this;
     }
 
     /**
@@ -431,6 +467,8 @@ class ServiceCallContext
     public function setLogocobrande($logocobrande)
     {
         $this->logocobrande = $logocobrande;
+
+        return $this;
     }
 
     /**
@@ -447,6 +485,8 @@ class ServiceCallContext
     public function setCommercialName($commercialName)
     {
         $this->commercialName = $commercialName;
+
+        return $this;
     }
 
     /**

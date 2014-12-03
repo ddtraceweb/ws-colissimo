@@ -2,6 +2,7 @@
 
 namespace WSColissimo\Common\Request;
 
+use Meup\UserBundle\Entity\User;
 use WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest;
 use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
 use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
@@ -23,14 +24,17 @@ interface RequestFactoryInterface
     /**
      * Create RDVPickupPoint request
      *
+     * @param User $user
      * @return RDVPickupPointRequest
      */
-    public function createRDVPickupPointRequest();
+    public function createRDVPickupPointRequest(User $user);
 
     /**
      * Create a PickupPointByID request
      *
+     * @param string $id
+     * @param string $network
      * @return PickupPointByIDRequest
      */
-    public function createPickupPointByIDRequest();
+    public function createPickupPointByIDRequest($id, $network);
 }

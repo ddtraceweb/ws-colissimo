@@ -2,10 +2,13 @@
 
 namespace WSColissimo\Common\Request;
 
+use Meup\Component\TNTExpress\Model\Service;
 use Meup\UserBundle\Entity\User;
 use WSColissimo\Common\Credentials;
 use WSColissimo\Common\Request\RequestFactoryInterface;
 use WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest;
+use WSColissimo\WSColiPosteLetterService\Request\ValueObject\ServiceCallContext;
+use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
 use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
 
 
@@ -50,12 +53,14 @@ class RequestFactory implements RequestFactoryInterface
 
         $request = new RDVPickupPointRequest();
         $request->setCredentials($this->credentials);
-        $request->setAddress($address->getLine2());
-        $request->setZipCode($address->getPostalCode());
-        $request->setCity($address->getCity()->getName());
-        $request->setCountryCode($countryIso);
-        $request->setShippingDate(new \DateTime());
-        $request->setOptionInter((in_array($countryIso, array('FR', 'MC'))? 0: 2);
+        $request
+            ->setAddress($address->getLine2())
+            ->setZipCode($address->getPostalCode())
+            ->setCity($address->getCity()->getName())
+            ->setCountryCode($countryIso)
+            ->setShippingDate(new \DateTime())
+            ->setOptionInter((in_array($countryIso, array('FR', 'MC')))? 0: 2)
+        ;
 
         return $request;
     }
@@ -63,10 +68,18 @@ class RequestFactory implements RequestFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createPickupPointByIDRequest()
+    public function createPickupPointByIDRequest($id, $network)
     {
         $request = new PickupPointByIDRequest();
         $request->setCredentials($this->credentials);
+        $request
+            ->setId($id)
+            ->setDate(new \DateTime())
+            ->setNetwork(($network == 'R12')? 'R12': '')
+        ;
+
+        var_dump($request);
+        var_dump($request->getContent());
 
         return $request;
     }

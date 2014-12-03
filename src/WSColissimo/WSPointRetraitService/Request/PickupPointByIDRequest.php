@@ -4,6 +4,7 @@ namespace WSColissimo\WSPointRetraitService\Request;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use WSColissimo\Common\Credentials;
 use WSColissimo\Common\Request\RequestInterface;
 
 /**
@@ -131,7 +132,7 @@ class PickupPointByIDRequest implements RequestInterface
      *
      * @return string
      */
-    public function getReseau()
+    public function getNetwork()
     {
         return $this->reseau;
     }
@@ -143,7 +144,7 @@ class PickupPointByIDRequest implements RequestInterface
      *
      * @return self
      */
-    public function setReseau($reseau)
+    public function setNetwork($reseau)
     {
         $this->reseau = $reseau;
 
@@ -312,6 +313,8 @@ class PickupPointByIDRequest implements RequestInterface
         return array(
             'accountNumber' => $this->getAccountNumber(),
             'password'      => $this->getPassword(),
+            'id'            => $this->getId(),
+            'reseau'        => $this->getNetwork(),
             'weight'        => $this->getWeight(),
             'date'          => $this->getDate(),
             'filterRelay'   => $this->getFilterRelay(),
