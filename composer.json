@@ -21,6 +21,7 @@
     },
     "autoload": {
         "psr-0": {
+            "WSColissimo\\Common": "src",
             "WSColissimo\\WSColiPosteLetterService": "src",
             "WSColissimo\\WSPointRetraitService": "src",
             "WSColissimo\\WSSupervision": "src"
