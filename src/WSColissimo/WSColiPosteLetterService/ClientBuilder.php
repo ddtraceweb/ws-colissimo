@@ -3,6 +3,7 @@
 namespace WSColissimo\WSColiPosteLetterService;
 
 use WSColissimo\WSColiPosteLetterService\Soap\SoapClientFactory;
+use WSColissimo\Common\Client;
 
 /**
  * ClientBuilder for the WSColiPosteLetterService

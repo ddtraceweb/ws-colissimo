@@ -3,6 +3,7 @@
 namespace WSColissimo\WSPointRetraitService;
 
 use WSColissimo\WSPointRetraitService\Soap\SoapClientFactory;
+use WSColissimo\Common\Client;
 
 /**
  * ClientBuilder for the WSPointRetraitService
