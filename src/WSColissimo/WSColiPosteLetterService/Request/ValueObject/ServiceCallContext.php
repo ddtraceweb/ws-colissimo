@@ -113,6 +113,11 @@ class ServiceCallContext
     protected $commercialName;
 
     /**
+     * @var string
+     */
+    protected $partnerNetworkCode;
+
+    /**
      * Constructor
      *
      * @param string $commercialName
@@ -485,6 +490,30 @@ class ServiceCallContext
     public function setCommercialName($commercialName)
     {
         $this->commercialName = $commercialName;
+
+        return $this;
+    }
+
+    /**
+     * Getter for partnerNetworkCode
+     *
+     * @return string
+     */
+    public function getPartnerNetworkCode()
+    {
+        return $this->partnerNetworkCode;
+    }
+
+    /**
+     * Setter for partnerNetworkCode
+     *
+     * @param string $partnerNetworkCode
+     *
+     * @return self
+     */
+    public function setPartnerNetworkCode($partnerNetworkCode)
+    {
+        $this->partnerNetworkCode = $partnerNetworkCode;
 
         return $this;
     }

@@ -96,4 +96,9 @@ class LetterColissimoRequest implements RequestInterface
             $this->getLetter()->setPassword($credentials->getPassword());
         }
     }
+
+    public function getCredentials()
+    {
+        return $this->credentials;
+    }
 }

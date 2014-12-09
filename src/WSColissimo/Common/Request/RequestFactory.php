@@ -2,11 +2,11 @@
 
 namespace WSColissimo\Common\Request;
 
-use Meup\Component\TNTExpress\Model\Service;
 use Meup\UserBundle\Entity\User;
 use WSColissimo\Common\Credentials;
 use WSColissimo\Common\Request\RequestFactoryInterface;
 use WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest;
+use WSColissimo\WSColiPosteLetterService\Request\ValueObject\Letter;
 use WSColissimo\WSColiPosteLetterService\Request\ValueObject\ServiceCallContext;
 use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
 use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
@@ -77,8 +77,6 @@ class RequestFactory implements RequestFactoryInterface
             ->setDate(new \DateTime())
             ->setNetwork(($network == 'R12')? 'R12': '')
         ;
-
-        var_dump($request);
         var_dump($request->getContent());
 
         return $request;
