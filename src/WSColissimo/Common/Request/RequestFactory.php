@@ -77,7 +77,6 @@ class RequestFactory implements RequestFactoryInterface
             ->setDate(new \DateTime())
             ->setNetwork(($network == 'R12')? 'R12': '')
         ;
-        var_dump($request->getContent());
 
         return $request;
     }
