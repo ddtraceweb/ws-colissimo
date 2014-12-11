@@ -2,8 +2,9 @@
 
 namespace WSColissimo\WSPointRetraitService;
 
-use WSColissimo\WSPointRetraitService\Soap\SoapClientFactory;
+use Symfony\Component\Validator\Validation;
 use WSColissimo\Common\Client;
+use WSColissimo\WSPointRetraitService\Soap\SoapClientFactory;
 
 /**
  * ClientBuilder for the WSPointRetraitService
@@ -29,7 +30,20 @@ class ClientBuilder
     {
         $soapClientFactory = new SoapClientFactory();
         $soapClient = $soapClientFactory->create($this->wsdl);
+        $validator = $this->createValidator();
 
-        return new Client($soapClient);
+        return new Client($soapClient, $validator);
+    }
+
+    /**
+     * Create validator
+     *
+     * @return Symfony\Component\Validator\ValidatorInterface
+     */
+    protected function createValidator()
+    {
+        return Validation::createValidatorBuilder()
+            ->addMethodMapping('loadValidatorMetadata')
+            ->getValidator();
     }
 }

@@ -26,9 +26,10 @@ interface RequestFactoryInterface
      * Create RDVPickupPoint request
      *
      * @param User $user
+     * @param integer $maxWeight
      * @return RDVPickupPointRequest
      */
-    public function createRDVPickupPointRequest(User $user);
+    public function createRDVPickupPointRequest(User $user, $maxWeight);
 
     /**
      * Create a PickupPointByID request

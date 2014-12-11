@@ -46,7 +46,7 @@ class RequestFactory implements RequestFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createRDVPickupPointRequest(User $user)
+    public function createRDVPickupPointRequest(User $user, $mawWeight)
     {
         $address = $user->getAddress();
         $countryIso = $address->getCity()->getCountry()->getIsoCode();
@@ -60,6 +60,7 @@ class RequestFactory implements RequestFactoryInterface
             ->setCountryCode($countryIso)
             ->setShippingDate(new \DateTime())
             ->setOptionInter((in_array($countryIso, array('FR', 'MC')))? 0: 2)
+            ->setWeight($maxWeight)
         ;
 
         return $request;
