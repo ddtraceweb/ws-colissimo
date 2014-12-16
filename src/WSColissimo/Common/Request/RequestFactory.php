@@ -46,7 +46,7 @@ class RequestFactory implements RequestFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createRDVPickupPointRequest(User $user, $mawWeight)
+    public function createRDVPickupPointRequest(User $user, $maxWeight)
     {
         $address = $user->getAddress();
         $countryIso = $address->getCity()->getCountry()->getIsoCode();
