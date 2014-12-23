@@ -2,7 +2,7 @@
 
 namespace WSColissimo\Common\Request;
 
-use Meup\UserBundle\Entity\User;
+use Meup\Bundle\UserBundle\Entity\User;
 use WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest;
 use WSColissimo\WSColiPosteLetterService\Request\ValueObject\Letter;
 use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
