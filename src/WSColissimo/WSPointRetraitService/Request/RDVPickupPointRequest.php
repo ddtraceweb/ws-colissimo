@@ -392,7 +392,7 @@ class RDVPickupPointRequest implements RequestInterface
         $metadata->addPropertyConstraint('address', new Assert\Length(array('max' => 200)));
 
         $metadata->addPropertyConstraint('zipCode', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('zipCode', new Assert\Regex(array('pattern' => '/^[a-zA-Z0-9]{5}$/')));
+        $metadata->addPropertyConstraint('zipCode', new Assert\Regex(array('pattern' => '/^[a-zA-Z0-9]+$/')));
 
         $metadata->addPropertyConstraint('city', new Assert\Type(array('type' => 'string')));
         $metadata->addPropertyConstraint('city', new Assert\NotBlank());
@@ -405,7 +405,6 @@ class RDVPickupPointRequest implements RequestInterface
         $metadata->addPropertyConstraint('weight', new Assert\Range(array('min' => 1, 'max' => 30000)));
 
         $metadata->addPropertyConstraint('shippingDate', new Assert\NotBlank());
-        // $metadata->addPropertyConstraint('shippingDate', new Assert\DateTime());
         $metadata->addPropertyConstraint('shippingDate', new Assert\Regex(array('pattern' => '/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/')));
 
         $metadata->addPropertyConstraint('filterRelay', new Assert\Type(array('type' => 'integer')));
