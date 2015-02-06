@@ -1,8 +1,6 @@
 WSColiPosteLetterService Client Library
 =======================================
 
-![Project Status](http://stillmaintained.com/lexik/ws-colissimo.png)
-
 ## Introduction
 
 This library provides a client for the SOAP
@@ -20,8 +18,14 @@ Add the library to your `composer.json` :
 
 ```
 {
+    "repositories": [{
+        "type": "git",
+        "url": "http://github.com/1001Pharmacies/ws-colissimo"
+    },
+    ...
+    ],
     "require": {
-        "lexik/ws-colissimo": "dev-master"
+        "lexik/ws-colissimo": "2.0.*"
     }
 }
 ```
@@ -38,7 +42,3 @@ php composer.phar update lexik/ws-colissimo
 ```
 # see example in sample/index.php
 ```
-
-### Symfony2
-
-Install the [LexikColissimoBundle](https://github.com/lexik/LexikColissimoBundle).
