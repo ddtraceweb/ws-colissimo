@@ -28,14 +28,19 @@ class DestEnv
     protected $codeBarForreference;
 
     /**
+     * @var CompanyType
+     */
+    protected $entity;
+    /**
      * Constructor
      *
      * @param Address $address
      */
-    public function __construct(AddressDest $address = null)
+    public function __construct(CompanyType $companyType, AddressDest $address = null)
     {
-        $this->addressVO           = $address;
-        $this->codeBarForreference = false;
+        $this->addressVO            = $address;
+        $this->companyType          = $companyType;
+        $this->codeBarForreference  = false;
     }
 
     /**
@@ -93,16 +98,44 @@ class DestEnv
     }
 
     /**
+     * Getter for companyType
+     *
+     * @return CompanyType
+     */
+    public function getCompanyType()
+    {
+        return $this->companyType;
+    }
+
+    /**
+     * Setter for companyType
+     *
+     * @param CompanyType $companyType
+     *
+     * @return self
+     */
+    public function setCompanyType(CompanyType $companyType)
+    {
+        $this->companyType = $companyType;
+
+        return $this;
+    }
+
+
+    /**
      * Add validation rules
      *
      * @param ClassMetadata $metadata
      */
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        $metadata->addPropertyConstraint('ref', new Assert\Blank());
+        $metadata->addPropertyConstraint('ref', new Assert\Length(array('max' => 15)));
 
         $metadata->addPropertyConstraint('addressVO', new Assert\NotBlank());
         $metadata->addPropertyConstraint('addressVO', new Assert\Valid());
+
+        $metadata->addPropertyConstraint('companyType', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('companyType', new Assert\Valid());
 
         $metadata->addPropertyConstraint('codeBarForreference', new Assert\Type(array('type' => 'boolean')));
     }

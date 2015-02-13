@@ -7,31 +7,9 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Address
- *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  */
 class Address
 {
-    /**
-     * @var string
-     */
-    protected $companyName;
-
-    /**
-     * @var string
-     */
-    protected $civility;
-
-    /**
-     * @var string
-     */
-    protected $name;
-
-    /**
-     * @var string
-     */
-    protected $surname;
-
     /**
      * @var string
      */
@@ -51,31 +29,6 @@ class Address
      * @var string
      */
     protected $line3;
-
-    /**
-     * @var string
-     */
-    protected $phone;
-
-    /**
-     * @var string
-     */
-    protected $mobileNumber;
-
-    /**
-     * @var string
-     */
-    protected $doorCode1;
-
-    /**
-     * @var string
-     */
-    protected $doorCode2;
-
-    /**
-     * @var string
-     */
-    protected $interphone;
 
     /**
      * @var string
@@ -109,78 +62,6 @@ class Address
     {
         $this->countryCode = 'FR';
         $this->country     = 'France';
-    }
-
-    /**
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->companyName;
-    }
-
-    /**
-     * @param string $companyName
-     */
-    public function setCompanyName($companyName)
-    {
-        $this->companyName = $companyName;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCivility()
-    {
-        return $this->civility;
-    }
-
-    /**
-     * @param string $civility
-     */
-    public function setCivility($civility)
-    {
-        $this->civility = $civility;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    /**
-     * @param string $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
-
-        return $this;
     }
 
     /**
@@ -251,96 +132,6 @@ class Address
     public function setLine3($line3)
     {
         $this->line3 = $line3;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    /**
-     * @param string $phone
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMobileNumber()
-    {
-        return $this->mobileNumber;
-    }
-
-    /**
-     * @param string $mobileNumber
-     */
-    public function setMobileNumber($mobileNumber)
-    {
-        $this->mobileNumber = $mobileNumber;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDoorCode1()
-    {
-        return $this->doorCode1;
-    }
-
-    /**
-     * @param string $doorCode1
-     */
-    public function setDoorCode1($doorCode1)
-    {
-        $this->doorCode1 = $doorCode1;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDoorCode2()
-    {
-        return $this->doorCode2;
-    }
-
-    /**
-     * @param string $doorCode2
-     */
-    public function setDoorCode2($doorCode2)
-    {
-        $this->doorCode2 = $doorCode2;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInterphone()
-    {
-        return $this->interphone;
-    }
-
-    /**
-     * @param string $interphone
-     */
-    public function setInterphone($interphone)
-    {
-        $this->interphone = $interphone;
 
         return $this;
     }
@@ -442,39 +233,21 @@ class Address
      */
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        $metadata->addPropertyConstraint('companyName', new Assert\Type(array('type' => 'string')));
-        $metadata->addPropertyConstraint('companyName', new Assert\Length(array('max' => 35)));
-
-        $metadata->addPropertyConstraint('civility', new Assert\Type(array('type' => 'string')));
-        $metadata->addPropertyConstraint('civility', new Assert\Length(array('max' => 4)));
-
-        $metadata->addPropertyConstraint('name', new Assert\Type(array('type' => 'string')));
-        $metadata->addPropertyConstraint('name', new Assert\Length(array('max' => 35)));
-
-        $metadata->addPropertyConstraint('surname', new Assert\Type(array('type' => 'string')));
-        $metadata->addPropertyConstraint('surname', new Assert\Length(array('max' => 29)));
-
         $metadata->addPropertyConstraint('email', new Assert\Type(array('type' => 'string')));
         $metadata->addPropertyConstraint('email', new Assert\Email());
 
         $metadata->addPropertyConstraint('line0', new Assert\Type(array('type' => 'string')));
+        $metadata->addPropertyConstraint('line2', new Assert\NotBlank());
         $metadata->addPropertyConstraint('line0', new Assert\Length(array('max' => 35)));
 
         $metadata->addPropertyConstraint('line1', new Assert\Type(array('type' => 'string')));
         $metadata->addPropertyConstraint('line1', new Assert\Length(array('max' => 35)));
 
         $metadata->addPropertyConstraint('line2', new Assert\Type(array('type' => 'string')));
-        $metadata->addPropertyConstraint('line2', new Assert\NotBlank());
         $metadata->addPropertyConstraint('line2', new Assert\Length(array('max' => 35)));
 
         $metadata->addPropertyConstraint('line3', new Assert\Type(array('type' => 'string')));
         $metadata->addPropertyConstraint('line3', new Assert\Length(array('max' => 35)));
-
-        $metadata->addPropertyConstraint('phone', new Assert\Regex(array('pattern' => '/^[0-9]{0,15}$/')));
-        $metadata->addPropertyConstraint('mobileNumber', new Assert\Regex(array('pattern' => '/^[0-9]{0,10}$/')));
-        $metadata->addPropertyConstraint('doorCode1', new Assert\Regex(array('pattern' => '/^[a-zA-Z0-9]{0,8}$/')));
-        $metadata->addPropertyConstraint('doorCode2', new Assert\Regex(array('pattern' => '/^[a-zA-Z0-9]{0,8}$/')));
-        $metadata->addPropertyConstraint('interphone', new Assert\Regex(array('pattern' => '/^[a-zA-Z0-9]{0,30}$/')));
 
         $metadata->addPropertyConstraint('countryCode', new Assert\NotBlank());
         $metadata->addPropertyConstraint('countryCode', new Assert\Regex(array('pattern' => '/^[A-Z]{2}$/')));

@@ -7,8 +7,6 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Letter
- *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  */
 class Letter
 {

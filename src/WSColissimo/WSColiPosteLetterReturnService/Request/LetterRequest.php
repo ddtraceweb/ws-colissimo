@@ -7,12 +7,11 @@ use WSColissimo\Common\Request\RequestInterface;
 use WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter;
 
 /**
- * LetterColissimoRequest
+ * LetterRequest
  *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class LetterColissimoRequest implements RequestInterface
+class LetterRequest implements RequestInterface
 {
     /**
      * @var Letter

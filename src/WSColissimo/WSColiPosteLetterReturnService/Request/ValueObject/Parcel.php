@@ -126,6 +126,7 @@ class Parcel
     {
         $metadata->addPropertyConstraint('insuranceRange', new Assert\Regex(array('pattern' => '/^[0-9]{2}$/')));
 
+        $metadata->addPropertyConstraint('recommendationLevel', new Assert\Blank());
         $metadata->addPropertyConstraint('recommendationLevel', new Assert\Regex(array('pattern' => '/^[a-zA-Z0-9]+$/')));
 
         $metadata->addPropertyConstraint('weight', new Assert\NotBlank());

@@ -18,18 +18,17 @@ class SoapClientFactory
      * @var array
      */
     protected $classmap = array(
-        'ServiceCallContextV2'       => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\ServiceCallContext',
-        'ArticleVO'                  => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Article',
-        'ContentsVO'                 => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Content',
-        'ParcelVO'                   => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Parcel',
-        'AddressVO'                  => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Address',
-        'DestEnvVO'                  => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\DestEnv',
-        'ExpEnvVO'                   => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\ExpEnv',
-        'LetterVO'                   => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter',
-        'Letter'                     => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter',
-        // 'getLetterColissimo'         => '\WSColissimo\WSColiPosteLetterReturnService\Request\LetterColissimoRequest',
-        'ReturnLetterVO'             => '\WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject\ReturnLetter',
-        'getLetterColissimoResponse' => '\WSColissimo\WSColiPosteLetterReturnService\Response\LetterColissimoResponse',
+        'ServiceCallContext'            => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\ServiceCallContext',
+        'Parcel'                        => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Article',
+        'CompanyType'                   => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Company',
+        'PersonType'                   => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Person',
+        'Address'                       => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Address',
+        'DestEnv'                     => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\DestEnv',
+        'ExpEnv'                      => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\ExpEnv',
+        'Letter'                        => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter',
+        // 'getLetterRequest'             => '\WSColissimo\WSColiPosteLetterReturnService\Request\LetterRequest',
+        'ReturnLetter'                => '\WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject\ReturnLetter',
+        'getLetterResponse'    => '\WSColissimo\WSColiPosteLetterReturnService\Response\LetterColissimoResponse',
     );
 
     /**
