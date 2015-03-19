@@ -7,90 +7,78 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * ExpEnv
- *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  */
 class ExpEnv
 {
     /**
-     * @var string
-     */
-    protected $ref;
-
-    /**
-     * @var string
-     */
-    protected $alert;
-
-    /**
      * @var Address
      */
-    protected $addressVO;
+    protected $address;
+
+    /**
+     * @var Person
+     */
+    protected $entity;
 
     /**
      * Constructor
      *
      * @param Address $address
      */
-    public function __construct(Address $address = null)
+    public function __construct(Person $entity, Address $address = null)
     {
-        $this->addressVO = $address;
-        $this->alert     = Choice\AlertType::NONE;
+        $this->address  = $address;
+        $this->entity   = $entity;
     }
 
     /**
-     * @return string
-     */
-    public function getRef()
-    {
-        return $this->ref;
-    }
-
-    /**
-     * @param string $ref
-     */
-    public function setRef($ref)
-    {
-        $this->ref = $ref;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAlert()
-    {
-        return $this->alert;
-    }
-
-    /**
-     * @param string $alert
-     */
-    public function setAlert($alert)
-    {
-        $this->alert = $alert;
-
-        return $this;
-    }
-
-    /**
+     * Get address
+     *
      * @return Address
      */
-    public function getAddressVO()
+    public function getAddress()
     {
-        return $this->addressVO;
+        return $this->address;
     }
 
     /**
-     * @param string $addressVO
+     * Set address
+     *
+     * @param Address $address
+     *
+     * @return self
      */
-    public function setAddressVO($addressVO)
+    public function setAddress(Address $address)
     {
-        $this->addressVO = $addressVO;
+        $this->address = $address;
 
         return $this;
     }
+
+    /**
+     * Getter for entity
+     *
+     * @return Person
+     */
+    public function getEntity()
+    {
+        return $this->entity;
+    }
+
+    /**
+     * Setter for entity
+     *
+     * @param Person $entity
+     *
+     * @return self
+     */
+    public function setEntity(Person $entity)
+    {
+        $this->entity = $entity;
+
+        return $this;
+    }
+
 
     /**
      * Add validation rules
@@ -99,15 +87,11 @@ class ExpEnv
      */
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        $metadata->addPropertyConstraint('ref', new Assert\Blank());
+        $metadata->addPropertyConstraint('address', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('address', new Assert\Valid());
 
-        $metadata->addPropertyConstraint('alert', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('alert', new Assert\Choice(array(
-            'callback' => array('\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Choice\AlertType', 'getChoices')
-        )));
-
-        $metadata->addPropertyConstraint('addressVO', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('addressVO', new Assert\Valid());
+        $metadata->addPropertyConstraint('entity', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('entity', new Assert\Valid());
     }
 
     /**

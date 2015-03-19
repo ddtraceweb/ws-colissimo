@@ -65,6 +65,8 @@ class Address
     }
 
     /**
+     * Get line0
+     *
      * @return string
      */
     public function getLine0()
@@ -73,7 +75,11 @@ class Address
     }
 
     /**
+     * Set line0
+     *
      * @param string $line0
+     *
+     * @return self
      */
     public function setLine0($line0)
     {
@@ -83,6 +89,8 @@ class Address
     }
 
     /**
+     * Get line1
+     *
      * @return string
      */
     public function getLine1()
@@ -91,7 +99,11 @@ class Address
     }
 
     /**
+     * Set line1
+     *
      * @param string $line1
+     *
+     * @return self
      */
     public function setLine1($line1)
     {
@@ -101,6 +113,8 @@ class Address
     }
 
     /**
+     * Get line2
+     *
      * @return string
      */
     public function getLine2()
@@ -109,7 +123,11 @@ class Address
     }
 
     /**
+     * Set line2
+     *
      * @param string $line2
+     *
+     * @return self
      */
     public function setLine2($line2)
     {
@@ -119,6 +137,8 @@ class Address
     }
 
     /**
+     * Get line3
+     *
      * @return string
      */
     public function getLine3()
@@ -127,7 +147,11 @@ class Address
     }
 
     /**
+     * Set line3
+     *
      * @param string $line3
+     *
+     * @return self
      */
     public function setLine3($line3)
     {
@@ -137,6 +161,8 @@ class Address
     }
 
     /**
+     * Get country
+     *
      * @return string
      */
     public function getCountry()
@@ -145,7 +171,11 @@ class Address
     }
 
     /**
+     * Set country
+     *
      * @param string $country
+     *
+     * @return self
      */
     public function setCountry($country)
     {
@@ -155,6 +185,8 @@ class Address
     }
 
     /**
+     * Get countryCode
+     *
      * @return string
      */
     public function getCountryCode()
@@ -163,7 +195,11 @@ class Address
     }
 
     /**
+     * Set countryCode
+     *
      * @param string $countryCode
+     *
+     * @return self
      */
     public function setCountryCode($countryCode)
     {
@@ -173,6 +209,8 @@ class Address
     }
 
     /**
+     * Get city
+     *
      * @return string
      */
     public function getCity()
@@ -181,7 +219,11 @@ class Address
     }
 
     /**
+     * Set city
+     *
      * @param string $city
+     *
+     * @return self
      */
     public function setCity($city)
     {
@@ -191,6 +233,8 @@ class Address
     }
 
     /**
+     * Get email
+     *
      * @return string
      */
     public function getEmail()
@@ -199,7 +243,11 @@ class Address
     }
 
     /**
+     * Set email
+     *
      * @param string $email
+     *
+     * @return self
      */
     public function setEmail($email)
     {
@@ -209,6 +257,8 @@ class Address
     }
 
     /**
+     * Get postalCode
+     *
      * @return string
      */
     public function getPostalCode()
@@ -217,7 +267,11 @@ class Address
     }
 
     /**
+     * Set postalCode
+     *
      * @param string $postalCode
+     *
+     * @return self
      */
     public function setPostalCode($postalCode)
     {
@@ -237,7 +291,7 @@ class Address
         $metadata->addPropertyConstraint('email', new Assert\Email());
 
         $metadata->addPropertyConstraint('line0', new Assert\Type(array('type' => 'string')));
-        $metadata->addPropertyConstraint('line2', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('line0', new Assert\NotBlank());
         $metadata->addPropertyConstraint('line0', new Assert\Length(array('max' => 35)));
 
         $metadata->addPropertyConstraint('line1', new Assert\Type(array('type' => 'string')));

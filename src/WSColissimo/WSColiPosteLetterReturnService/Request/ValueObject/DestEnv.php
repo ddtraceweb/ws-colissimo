@@ -6,9 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
- * DestEnvVO
- *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
+ * DestEnv
  */
 class DestEnv
 {
@@ -18,9 +16,9 @@ class DestEnv
     protected $ref;
 
     /**
-     * @var DestAddress
+     * @var Address
      */
-    protected $addressVO;
+    protected $address;
 
     /**
      * @var boolean
@@ -28,7 +26,7 @@ class DestEnv
     protected $codeBarForreference;
 
     /**
-     * @var CompanyType
+     * @var Company
      */
     protected $entity;
     /**
@@ -36,14 +34,16 @@ class DestEnv
      *
      * @param Address $address
      */
-    public function __construct(CompanyType $companyType, AddressDest $address = null)
+    public function __construct(Company $entity, Address $address = null)
     {
-        $this->addressVO            = $address;
-        $this->companyType          = $companyType;
+        $this->address              = $address;
+        $this->entity               = $entity;
         $this->codeBarForreference  = false;
     }
 
     /**
+     * Get ref
+     *
      * @return string
      */
     public function getRef()
@@ -52,7 +52,11 @@ class DestEnv
     }
 
     /**
+     * Set ref
+     *
      * @param string $ref
+     *
+     * @return self
      */
     public function setRef($ref)
     {
@@ -62,25 +66,33 @@ class DestEnv
     }
 
     /**
-     * @return the DestAddress
+     * Get address
+     *
+     * @return Address
      */
-    public function getAddressVO()
+    public function getAddress()
     {
-        return $this->addressVO;
+        return $this->address;
     }
 
     /**
-     * @param string $addressVO
+     * Set address
+     *
+     * @param Address $address
+     *
+     * @return self
      */
-    public function setAddressVO($addressVO)
+    public function setAddress(Address $address)
     {
-        $this->addressVO = $addressVO;
+        $this->address = $address;
 
         return $this;
     }
 
     /**
-     * @return the boolean
+     * Get codeBarForreference
+     *
+     * @return boolean
      */
     public function getCodeBarForreference()
     {
@@ -88,7 +100,11 @@ class DestEnv
     }
 
     /**
-     * @param string $codeBarForreference
+     * Set codeBarForreference
+     *
+     * @param boolean $codeBarForreference
+     *
+     * @return self
      */
     public function setCodeBarForreference($codeBarForreference)
     {
@@ -98,25 +114,25 @@ class DestEnv
     }
 
     /**
-     * Getter for companyType
+     * Getter for entity
      *
-     * @return CompanyType
+     * @return Company
      */
-    public function getCompanyType()
+    public function getEntity()
     {
-        return $this->companyType;
+        return $this->entity;
     }
 
     /**
-     * Setter for companyType
+     * Setter for entity
      *
-     * @param CompanyType $companyType
+     * @param Company $entity
      *
      * @return self
      */
-    public function setCompanyType(CompanyType $companyType)
+    public function setEntity(Company $entity)
     {
-        $this->companyType = $companyType;
+        $this->entity = $entity;
 
         return $this;
     }
@@ -131,11 +147,11 @@ class DestEnv
     {
         $metadata->addPropertyConstraint('ref', new Assert\Length(array('max' => 15)));
 
-        $metadata->addPropertyConstraint('addressVO', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('addressVO', new Assert\Valid());
+        $metadata->addPropertyConstraint('address', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('address', new Assert\Valid());
 
-        $metadata->addPropertyConstraint('companyType', new Assert\NotBlank());
-        $metadata->addPropertyConstraint('companyType', new Assert\Valid());
+        $metadata->addPropertyConstraint('entity', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('entity', new Assert\Valid());
 
         $metadata->addPropertyConstraint('codeBarForreference', new Assert\Type(array('type' => 'boolean')));
     }

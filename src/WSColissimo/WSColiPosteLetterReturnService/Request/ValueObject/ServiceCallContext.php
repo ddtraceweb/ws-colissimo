@@ -62,6 +62,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get dateDeposite
+     *
      * @return \DateTime
      */
     public function getDateDeposite()
@@ -70,7 +72,11 @@ class ServiceCallContext
     }
 
     /**
-     * @param \DateTime $dateDeposite
+     * Set dateDeposite
+     *
+     * @param \DateTime|null $dateDeposite
+     *
+     * @return self
      */
     public function setDateDeposite(\DateTime $dateDeposite = null)
     {
@@ -80,6 +86,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get returnType
+     *
      * @return string
      */
     public function getReturnType()
@@ -88,7 +96,11 @@ class ServiceCallContext
     }
 
     /**
+     * Set returnType
+     *
      * @param string $returnType
+     *
+     * @return self
      */
     public function setReturnType($returnType)
     {
@@ -98,6 +110,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get serviceType
+     *
      * @return string
      */
     public function getServiceType()
@@ -106,7 +120,11 @@ class ServiceCallContext
     }
 
     /**
-     * @param string $serviceType
+     * Set serviceType
+     *
+     * @param strign $serviceType
+     *
+     * @return self
      */
     public function setServiceType($serviceType)
     {
@@ -116,6 +134,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get commandNumber
+     *
      * @return string
      */
     public function getCommandNumber()
@@ -124,6 +144,8 @@ class ServiceCallContext
     }
 
     /**
+     * Set commandNumber
+     *
      * @param string $commandNumber
      */
     public function setCommandNumber($commandNumber)
@@ -134,6 +156,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get motiveBack
+     *
      * @return string
      */
     public function getMotiveBack()
@@ -142,7 +166,11 @@ class ServiceCallContext
     }
 
     /**
+     * Set motiveBack
+     *
      * @param string $motiveBack
+     *
+     * @return self
      */
     public function setMotiveBack($motiveBack)
     {
@@ -152,6 +180,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get logocobrande
+     *
      * @return string
      */
     public function getLogocobrande()
@@ -160,7 +190,11 @@ class ServiceCallContext
     }
 
     /**
+     * Set logocobrande
+     *
      * @param string $logocobrande
+     *
+     * @return self
      */
     public function setLogocobrande($logocobrande)
     {
@@ -170,6 +204,8 @@ class ServiceCallContext
     }
 
     /**
+     * Get languageConsignor
+     *
      * @return string
      */
     public function getLanguageConsignor()
@@ -178,7 +214,11 @@ class ServiceCallContext
     }
 
     /**
+     * Set languageConsignor
+     *
      * @param string $languageConsignor
+     *
+     * @return self
      */
     public function setLanguageConsignor($languageConsignor)
     {

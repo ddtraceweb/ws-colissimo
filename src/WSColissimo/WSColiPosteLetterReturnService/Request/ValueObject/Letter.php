@@ -4,6 +4,7 @@ namespace WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use WSColissimo\Common\Credentials;
 
 /**
  * Letter
@@ -11,7 +12,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 class Letter
 {
     /**
-     * @var integer
+     * @var int
      */
     protected $contractNumber;
 
@@ -41,7 +42,9 @@ class Letter
     protected $exp;
 
     /**
-     * @return integer
+     * Get contract number
+     *
+     * @return int
      */
     public function getContractNumber()
     {
@@ -49,7 +52,11 @@ class Letter
     }
 
     /**
-     * @param integer $contractNumber
+     * Set contract number
+     *
+     * @param int $contractNumber
+     *
+     * @return self
      */
     public function setContractNumber($contractNumber)
     {
@@ -59,6 +66,8 @@ class Letter
     }
 
     /**
+     * Get password
+     *
      * @return string
      */
     public function getPassword()
@@ -67,7 +76,11 @@ class Letter
     }
 
     /**
+     * Set the password
+     *
      * @param string $password
+     *
+     * @return self
      */
     public function setPassword($password)
     {
@@ -77,6 +90,23 @@ class Letter
     }
 
     /**
+     * Set credentials in one go
+     *
+     * @param Credentials $credentials
+     *
+     * @return self
+     */
+    public function setCredentials(Credentials $credentials)
+    {
+        $this->contractNumber   = $credentials->getAccountNumber();
+        $this->password         = $credentials->getPassword();
+
+        return $this;
+    }
+
+    /**
+     * Get service
+     *
      * @return ServiceCallContext
      */
     public function getService()
@@ -85,7 +115,11 @@ class Letter
     }
 
     /**
+     * Set service
+     *
      * @param ServiceCallContext $service
+     *
+     * @return self
      */
     public function setService(ServiceCallContext $service)
     {
@@ -95,6 +129,8 @@ class Letter
     }
 
     /**
+     * Get parcel
+     *
      * @return Parcel
      */
     public function getParcel()
@@ -103,7 +139,11 @@ class Letter
     }
 
     /**
+     * Set parcel
+     *
      * @param Parcel $parcel
+     *
+     * @return self
      */
     public function setParcel(Parcel $parcel)
     {
@@ -113,6 +153,8 @@ class Letter
     }
 
     /**
+     * Get dest
+     *
      * @return DestEnv
      */
     public function getDest()
@@ -121,7 +163,11 @@ class Letter
     }
 
     /**
+     * Set dest
+     *
      * @param DestEnv $dest
+     *
+     * @return self
      */
     public function setDest(DestEnv $dest)
     {
@@ -131,6 +177,8 @@ class Letter
     }
 
     /**
+     * Get exp
+     *
      * @return ExpEnv
      */
     public function getExp()
@@ -139,7 +187,11 @@ class Letter
     }
 
     /**
+     * Set exp
+     *
      * @param ExpEnv $exp
+     *
+     * @return self
      */
     public function setExp(ExpEnv $exp)
     {
@@ -176,9 +228,11 @@ class Letter
     }
 
     /**
-     * Getter
+     * Getter to prevent break on get inexistant variables
      *
      * @param string $name
+     *
+     * @return mixed|void
      */
     public function __get($name)
     {

@@ -3,8 +3,6 @@
 namespace WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject;
 /**
  * ReturnLetter
- *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  */
 class ReturnLetter
 {
@@ -24,7 +22,7 @@ class ReturnLetter
     protected $PdfUrl;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $errorID;
 
@@ -36,12 +34,7 @@ class ReturnLetter
     /**
      * @var string
      */
-    protected $signature;
-
-    /**
-     * @var string
-     */
-    protected $dateCreation;
+    protected $parcelNumberPartner;
 
     /**
      * @return string
@@ -126,33 +119,17 @@ class ReturnLetter
     /**
      * @return string
      */
-    public function getSignature()
+    public function getParcelNumberPartner()
     {
-        return $this->signature;
+        return $this->parcelNumberPartner;
     }
 
     /**
-     * @param string $signature
+     * @param string $parcelNumberPartner
      */
-    public function setSignature($signature)
+    public function setParcelNumberPartner($parcelNumberPartner)
     {
-        $this->signature = $signature;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDateCreation()
-    {
-        return $this->dateCreation;
-    }
-
-    /**
-     * @param string $dateCreation
-     */
-    public function setDateCreation($dateCreation)
-    {
-        $this->dateCreation = $dateCreation;
+        $this->parcelNumberPartner = $parcelNumberPartner;
     }
 
     /**

@@ -46,6 +46,8 @@ class Parcel
     }
 
     /**
+     * Get insuranceRange
+     *
      * @return string
      */
     public function getInsuranceRange()
@@ -54,7 +56,11 @@ class Parcel
     }
 
     /**
+     * Set insuranceRange
+     *
      * @param string $insuranceRange
+     *
+     * @return self
      */
     public function setInsuranceRange($insuranceRange)
     {
@@ -64,6 +70,8 @@ class Parcel
     }
 
     /**
+     * Get recommendationLevel
+     *
      * @return string
      */
     public function getRecommendationLevel()
@@ -72,7 +80,11 @@ class Parcel
     }
 
     /**
+     * Set recommandationLevel
+     *
      * @param string $recommendationLevel
+     *
+     * @return self
      */
     public function setRecommendationLevel($recommendationLevel)
     {
@@ -82,6 +94,8 @@ class Parcel
     }
 
     /**
+     * Get weight
+     *
      * @return float
      */
     public function getWeight()
@@ -90,7 +104,11 @@ class Parcel
     }
 
     /**
+     * Set weight
+     *
      * @param float $weight
+     *
+     * @return self
      */
     public function setWeight($weight)
     {
@@ -100,6 +118,8 @@ class Parcel
     }
 
     /**
+     * Get horsGabarit
+     *
      * @return boolean
      */
     public function getHorsGabarit()
@@ -108,7 +128,11 @@ class Parcel
     }
 
     /**
+     * Set horsGabarit
+     *
      * @param boolean $horsGabarit
+     *
+     * @return self
      */
     public function setHorsGabarit($horsGabarit)
     {

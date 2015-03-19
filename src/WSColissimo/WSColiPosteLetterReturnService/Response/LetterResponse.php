@@ -2,6 +2,7 @@
 
 namespace WSColissimo\WSColiPosteLetterReturnService\Response;
 
+use WSColissimo\Common\Response\ReponseInterface;
 use WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject\ReturnLetter;
 
 /**
@@ -9,7 +10,7 @@ use WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject\ReturnLetter
  *
  * @author @author Nicolas Cabot <n.cabot@lexik.fr>
  */
-class LetterColissimoResponse
+class LetterResponse implements ReponseInterface
 {
     /**
      * @var ReturnLetter
@@ -68,7 +69,7 @@ class LetterColissimoResponse
      */
     public function __set($name, $value)
     {
-        if ($name === 'getLetterColissimoReturn') {
+        if ($name === 'ReturnLetter') {
             return $this->setReturnLetter($value);
         }
     }

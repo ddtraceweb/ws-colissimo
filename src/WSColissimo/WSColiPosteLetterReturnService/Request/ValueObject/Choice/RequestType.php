@@ -4,8 +4,6 @@ namespace WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Choice;
 
 /**
  * RequestType
- *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  */
 class RequestType
 {

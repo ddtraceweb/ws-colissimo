@@ -34,6 +34,8 @@ class LetterRequest implements RequestInterface
     }
 
     /**
+     * Get letter
+     *
      * @return Letter
      */
     public function getLetter()
@@ -42,13 +44,19 @@ class LetterRequest implements RequestInterface
     }
 
     /**
+     * Set letter
+     *
      * @param Letter $letter
+     *
+     * @return self
      */
     public function setLetter(Letter $letter)
     {
         $this->letter = $letter;
-        $this->getLetter()->setContractNumber($credentials->getAccountNumber());
-        $this->getLetter()->setPassword($credentials->getPassword());
+
+        if (!empty($this->credentials)) {
+            $this->letter->setCredentials($this->credentials);
+        }
     }
 
     /**
@@ -80,7 +88,7 @@ class LetterRequest implements RequestInterface
      */
     public function getMethod()
     {
-        return 'getLetterColissimo';
+        return 'getLetterRequest';
     }
 
     /**
@@ -91,8 +99,7 @@ class LetterRequest implements RequestInterface
         $this->credentials = $credentials;
 
         if(!empty($this->letter)) {
-            $this->getLetter()->setContractNumber($credentials->getAccountNumber());
-            $this->getLetter()->setPassword($credentials->getPassword());
+            $this->letter->setCredentials($credentials);
         }
     }
 

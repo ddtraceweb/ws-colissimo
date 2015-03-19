@@ -48,8 +48,14 @@ class LetterColissimoRequest implements RequestInterface
     public function setLetter(Letter $letter)
     {
         $this->letter = $letter;
-        $this->getLetter()->setContractNumber($credentials->getAccountNumber());
-        $this->getLetter()->setPassword($credentials->getPassword());
+
+        if (!empty($this->credentials)) {
+            $this
+                ->letter
+                ->setContractNumber($this->credentials->getAccountNumber())
+                ->setPassword($this->credentials->getPassword())
+            ;
+        }
     }
 
     /**
@@ -92,8 +98,11 @@ class LetterColissimoRequest implements RequestInterface
         $this->credentials = $credentials;
 
         if(!empty($this->letter)) {
-            $this->getLetter()->setContractNumber($credentials->getAccountNumber());
-            $this->getLetter()->setPassword($credentials->getPassword());
+            $this
+                ->letter
+                ->setContractNumber($credentials->getAccountNumber())
+                ->setPassword($credentials->getPassword())
+            ;
         }
     }
 
