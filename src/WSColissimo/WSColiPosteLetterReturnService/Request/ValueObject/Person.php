@@ -5,7 +5,7 @@ namespace WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
-class Company
+class Person
 {
     /**
      * @var string
