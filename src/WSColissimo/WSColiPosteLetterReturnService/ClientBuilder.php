@@ -16,7 +16,7 @@ class ClientBuilder
      *
      * @param string $wsdl Path to the WSColiPosteLetterReturnService WSDL
      */
-    public function __construct($wsdl = 'https://ws.colissimo.fr/soap.shippingclp-return-ws-proxy/services/WSColiPosteLetterReturnService')
+    public function __construct($wsdl = 'https://ws.colissimo.fr/soap.shippingclp-return-ws-proxy/services/WSColiPosteLetterReturnService?wsdl')
     {
         $this->wsdl = $wsdl;
     }
