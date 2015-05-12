@@ -7,7 +7,7 @@ namespace WSColissimo\Common\Response;
  *
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-interface ReponseInterface
+interface ResponseInterface
 {
     /**
      * Is response successful ?
