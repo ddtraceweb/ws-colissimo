@@ -88,7 +88,7 @@ class LetterRequest implements RequestInterface
      */
     public function getMethod()
     {
-        return 'getLetterRequest';
+        return 'getLetter';
     }
 
     /**
