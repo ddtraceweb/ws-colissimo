@@ -69,7 +69,7 @@ class LetterResponse implements ResponseInterface
      */
     public function __set($name, $value)
     {
-        if ($name === 'ReturnLetter') {
+        if ($name === 'getLetterReturn') {
             return $this->setReturnLetter($value);
         }
     }
