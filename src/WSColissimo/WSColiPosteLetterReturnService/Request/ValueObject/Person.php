@@ -15,12 +15,12 @@ class Person
     /**
      * @var string
      */
-    protected $surname;
+    protected $Surname;
 
     /**
      * @var string
      */
-    protected $name;
+    protected $Name;
 
     /**
      * @var string
@@ -64,13 +64,13 @@ class Person
     /**
      * Setter for surname
      *
-     * @param string $surname
+     * @param string $Surname
      *
      * @return self
      */
-    public function setSurname($surname)
+    public function setSurname($Surname)
     {
-        $this->surname = $surname;
+        $this->surname = $Surname;
 
         return $this;
     }
@@ -88,13 +88,13 @@ class Person
     /**
      * Setter for name
      *
-     * @param string $name
+     * @param string $Name
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($Name)
     {
-        $this->name = $name;
+        $this->name = $Name;
 
         return $this;
     }
