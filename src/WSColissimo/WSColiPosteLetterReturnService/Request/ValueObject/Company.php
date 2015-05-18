@@ -58,7 +58,7 @@ class Company
      */
     public function getSurname()
     {
-        return $this->surname;
+        return $this->Surname;
     }
 
     /**
@@ -70,7 +70,7 @@ class Company
      */
     public function setSurname($Surname)
     {
-        $this->surname = $Surname;
+        $this->Surname = $Surname;
 
         return $this;
     }
@@ -82,7 +82,7 @@ class Company
      */
     public function getName()
     {
-        return $this->name;
+        return $this->Name;
     }
 
     /**
@@ -94,7 +94,7 @@ class Company
      */
     public function setName($Name)
     {
-        $this->name = $Name;
+        $this->Name = $Name;
 
         return $this;
     }
