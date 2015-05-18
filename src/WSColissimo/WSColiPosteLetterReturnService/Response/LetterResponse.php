@@ -1,16 +1,16 @@
 <?php
 
-namespace WSColissimo\WSColiPosteLetterService\Response;
+namespace WSColissimo\WSColiPosteLetterReturnService\Response;
 
 use WSColissimo\Common\Response\ResponseInterface;
-use WSColissimo\WSColiPosteLetterService\Response\ValueObject\ReturnLetter;
+use WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject\ReturnLetter;
 
 /**
  * LetterColissimoResponse
  *
  * @author @author Nicolas Cabot <n.cabot@lexik.fr>
  */
-class LetterColissimoResponse implements ResponseInterface
+class LetterResponse implements ResponseInterface
 {
     /**
      * @var ReturnLetter
@@ -69,7 +69,7 @@ class LetterColissimoResponse implements ResponseInterface
      */
     public function __set($name, $value)
     {
-        if ($name === 'getLetterColissimoReturn') {
+        if ($name === 'getLetterReturn') {
             return $this->setReturnLetter($value);
         }
     }

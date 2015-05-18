@@ -1,18 +1,17 @@
 <?php
 
-namespace WSColissimo\WSColiPosteLetterService\Request;
+namespace WSColissimo\WSColiPosteLetterReturnService\Request;
 
 use WSColissimo\Common\Credentials;
 use WSColissimo\Common\Request\RequestInterface;
-use WSColissimo\WSColiPosteLetterService\Request\ValueObject\Letter;
+use WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter;
 
 /**
- * LetterColissimoRequest
+ * LetterRequest
  *
- * @author Nicolas Cabot <n.cabot@lexik.fr>
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class LetterColissimoRequest implements RequestInterface
+class LetterRequest implements RequestInterface
 {
     /**
      * @var Letter
@@ -35,6 +34,8 @@ class LetterColissimoRequest implements RequestInterface
     }
 
     /**
+     * Get letter
+     *
      * @return Letter
      */
     public function getLetter()
@@ -43,18 +44,18 @@ class LetterColissimoRequest implements RequestInterface
     }
 
     /**
+     * Set letter
+     *
      * @param Letter $letter
+     *
+     * @return self
      */
     public function setLetter(Letter $letter)
     {
         $this->letter = $letter;
 
         if (!empty($this->credentials)) {
-            $this
-                ->letter
-                ->setContractNumber($this->credentials->getAccountNumber())
-                ->setPassword($this->credentials->getPassword())
-            ;
+            $this->letter->setCredentials($this->credentials);
         }
     }
 
@@ -87,7 +88,7 @@ class LetterColissimoRequest implements RequestInterface
      */
     public function getMethod()
     {
-        return 'getLetterColissimo';
+        return 'getLetter';
     }
 
     /**
@@ -98,11 +99,7 @@ class LetterColissimoRequest implements RequestInterface
         $this->credentials = $credentials;
 
         if(!empty($this->letter)) {
-            $this
-                ->letter
-                ->setContractNumber($credentials->getAccountNumber())
-                ->setPassword($credentials->getPassword())
-            ;
+            $this->letter->setCredentials($credentials);
         }
     }
 

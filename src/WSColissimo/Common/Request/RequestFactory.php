@@ -5,9 +5,10 @@ namespace WSColissimo\Common\Request;
 use Meup\Bundle\UserBundle\Entity\User;
 use WSColissimo\Common\Credentials;
 use WSColissimo\Common\Request\RequestFactoryInterface;
+use WSColissimo\WSColiPosteLetterReturnService\Request\LetterRequest;
+use WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter as LetterReturn;
 use WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest;
 use WSColissimo\WSColiPosteLetterService\Request\ValueObject\Letter;
-use WSColissimo\WSColiPosteLetterService\Request\ValueObject\ServiceCallContext;
 use WSColissimo\WSPointRetraitService\Request\PickupPointByIDRequest;
 use WSColissimo\WSPointRetraitService\Request\RDVPickupPointRequest;
 
@@ -38,6 +39,17 @@ class RequestFactory implements RequestFactoryInterface
     public function createLetterColissimoRequest(Letter $letter = null)
     {
         $request = new LetterColissimoRequest($letter);
+        $request->setCredentials($this->credentials);
+
+        return $request;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createLetterColissimoReturnRequest(LetterReturn $letter = null)
+    {
+        $request = new LetterRequest($letter);
         $request->setCredentials($this->credentials);
 
         return $request;
