@@ -25,7 +25,7 @@ Add the library to your `composer.json` :
     ...
     ],
     "require": {
-        "lexik/ws-colissimo": "2.0.*"
+        "lexik/ws-colissimo": "dev-master"
     }
 }
 ```

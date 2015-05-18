@@ -2,7 +2,7 @@
 
 namespace WSColissimo\WSPointRetraitService\Response;
 
-use WSColissimo\Common\Response\ReponseInterface;
+use WSColissimo\Common\Response\ResponseInterface;
 use WSColissimo\WSPointRetraitService\Response\ValueObject\RDVPickupPointResult;
 
 /**
@@ -10,7 +10,7 @@ use WSColissimo\WSPointRetraitService\Response\ValueObject\RDVPickupPointResult;
  *
  * @author Kevin Monmousseau <kevin@1001pharmacies.com>
  */
-class RDVPickupPointResponse implements ReponseInterface
+class RDVPickupPointResponse implements ResponseInterface
 {
     /**
      * @var RDVPickupPointResult
