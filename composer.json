@@ -1,5 +1,5 @@
 {
-    "name": "1001Pharmacies/ws-colissimo",
+    "name": "1001pharmacies/ws-colissimo",
     "type": "library",
     "description": "A library for consuming the SOAP WSColiPosteLetterService, WSPointRetraitService and WSColiPosteLetterReturnService",
     "keywords": ["colissimo", "webservice", "coliposteletterservice", "pointretraitservice", "coliposteletterreturnservice"],
