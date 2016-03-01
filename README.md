@@ -20,19 +20,19 @@ Add the library to your `composer.json` :
 {
     "repositories": [{
         "type": "git",
-        "url": "http://github.com/1001Pharmacies/ws-colissimo"
+        "url": "http://github.com/ddtraceweb/ws-colissimo"
     },
     ...
     ],
     "require": {
-        "lexik/ws-colissimo": "dev-master"
+        "ddtraceweb/ws-colissimo": "dev-master"
     }
 }
 ```
 Install it by running the command :
 
 ```
-php composer.phar update lexik/ws-colissimo
+php composer.phar update ddtraceweb/ws-colissimo
 ```
 
 ## Usage

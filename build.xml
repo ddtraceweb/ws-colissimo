@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="1001pharmacies/ws-colissimo" basedir="./" default="help">
+<project name="ddtraceweb/ws-colissimo" basedir="./" default="help">
     <property name="builddir" value="build" />
 
     <target name="help">
@@ -221,6 +221,7 @@
             <arg value="./"/>
         </exec>
     </target>
+
 
     <target name="ci:phpmetrics"
         description="Generate project global quality report with PHPMetrics">
