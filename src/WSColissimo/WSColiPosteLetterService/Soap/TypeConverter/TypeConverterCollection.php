@@ -7,6 +7,9 @@ namespace WSColissimo\WSColiPosteLetterService\Soap\TypeConverter;
  */
 class TypeConverterCollection
 {
+    /**
+    * @var TypeConverterInterface[]
+    */
     protected $converters = array();
 
     /**

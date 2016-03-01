@@ -86,7 +86,7 @@ class SoapClientFactory
     /**
      * Set type converter collection
      *
-     * @param type $typeConverters Type converter collection
+     * @param TypeConverterCollection $typeConverters
      *
      * @return SoapClientFactory
      */
