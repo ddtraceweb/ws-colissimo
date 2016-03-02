@@ -126,8 +126,7 @@ class ServiceCallContext
         $this->crbt           = false;
         $this->portPaye       = false;
 
-        $this->dateDeposite   = new \DateTime();
-        $this->dateDeposite->setTimeZone(new DateTimeZone('UTC'));
+        $this->dateDeposite   = '2016-03-02 12:49:31.000000';
     }
 
     /**
@@ -143,7 +142,7 @@ class ServiceCallContext
      */
     public function setDateDeposite(\DateTime $dateDeposite = null)
     {
-        $this->dateDeposite = $dateDeposite->setTimeZone(new DateTimeZone('UTC'));
+        $this->dateDeposite = '2016-03-02 12:49:31.000000';
     }
 
     /**
