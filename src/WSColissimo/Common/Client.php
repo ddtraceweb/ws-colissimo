@@ -67,4 +67,13 @@ class Client implements ClientInterface
             throw $this->createRequestExceptionFromSoapFault($exception);
         }
     }
+
+    /**
+     * (non-PHPdoc)
+     * @see \WSColissimo\WSColiPosteLetterService\ClientInterface::getLetterColissimo()
+     */
+    public function getLetterColissimo(LetterColissimoRequest $request)
+    {
+        return $this->soapClient->__soapCall('getLetterColissimo', array($request));
+    }
 }
