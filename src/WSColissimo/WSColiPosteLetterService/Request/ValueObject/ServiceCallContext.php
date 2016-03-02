@@ -134,7 +134,7 @@ class ServiceCallContext
      */
     public function getDateDeposite()
     {
-        return $this->dateDeposite;
+        return $this->dateDeposite->format('Y-m-d\TH-i-s.\0\0\0\Z');;
     }
 
     /**
@@ -142,7 +142,7 @@ class ServiceCallContext
      */
     public function setDateDeposite(\DateTime $dateDeposite = null)
     {
-        $this->dateDeposite = $dateDeposite;
+        $this->dateDeposite = $dateDeposite->setTimeZone(new DateTimeZone('UTC'));
     }
 
     /**
