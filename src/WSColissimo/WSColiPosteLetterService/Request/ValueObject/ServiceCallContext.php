@@ -127,6 +127,7 @@ class ServiceCallContext
         $this->portPaye       = false;
 
         $this->dateDeposite   = new \DateTime();
+        $this->dateDeposite->setTimeZone(new DateTimeZone('UTC'));
     }
 
     /**
