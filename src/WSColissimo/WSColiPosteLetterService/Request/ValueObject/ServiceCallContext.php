@@ -126,7 +126,7 @@ class ServiceCallContext
         $this->crbt           = false;
         $this->portPaye       = false;
 
-        $this->dateDeposite   = '2016-03-02 12:49:31.000000';
+        $this->dateDeposite   = new \DateTime();
     }
 
     /**
@@ -142,7 +142,7 @@ class ServiceCallContext
      */
     public function setDateDeposite(\DateTime $dateDeposite = null)
     {
-        $this->dateDeposite = '2016-03-02 12:49:31.000000';
+        $this->dateDeposite = $dateDeposite;
     }
 
     /**
