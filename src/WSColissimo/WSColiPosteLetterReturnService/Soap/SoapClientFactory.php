@@ -26,7 +26,7 @@ class SoapClientFactory
         'DestEnv'               => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\DestEnv',
         'ExpEnv'                => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\ExpEnv',
         'Letter'                => '\WSColissimo\WSColiPosteLetterReturnService\Request\ValueObject\Letter',
-        // 'getLetterRequest'      => '\WSColissimo\WSColiPosteLetterReturnService\Request\LetterRequest',
+        'getLetterRequest'      => '\WSColissimo\WSColiPosteLetterReturnService\Request\LetterRequest',
         'ReturnLetter'          => '\WSColissimo\WSColiPosteLetterReturnService\Response\ValueObject\ReturnLetter',
         'getLetterResponse'     => '\WSColissimo\WSColiPosteLetterReturnService\Response\LetterResponse',
     );

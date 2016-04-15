@@ -22,14 +22,4 @@ interface ClientInterface
      * @return LetterColissimoResponse|RDVPickupPointResponse|PickupPointByIDResponse
      */
     public function sendRequest(RequestInterface $request);
-
-    /**
-     * Ask for the generation of a colissimo letter
-     *
-     * @param LetterColissimoRequest $request
-     *
-     * @return LetterColissimoResponse
-     */
-    public function getLetterColissimo(LetterColissimoRequest $request);
-
 }
