@@ -1,9 +1,9 @@
 {
-    "name": "ddtraceweb/ws-colissimo",
+    "name": "lexik/ws-colissimo",
     "type": "library",
-    "description": "A library for consuming the SOAP WSColiPosteLetterService, WSPointRetraitService and WSColiPosteLetterReturnService",
-    "keywords": ["colissimo", "webservice", "coliposteletterservice", "pointretraitservice", "coliposteletterreturnservice"],
-    "homepage": "https://github.com/ddtraceweb/ws-colissimo",
+    "description": "A library for consuming the SOAP WSColiPosteLetterService",
+    "keywords": ["colissimo", "webservice", "coliposteletterservice"],
+    "homepage": "https://github.com/lexikteam/ws-colissimo",
     "license": "MIT",
     "authors": [
         {
@@ -13,27 +13,15 @@
         {
             "name": "Dev Lexik",
             "email": "dev@lexik.fr"
-        },
-        {
-            "name": "Dev 1001pharmacies",
-            "email": "technique@1001pharmacies.com"
-        },
-        {
-            "name" : "ddtraceweb",
-            "email" : "david@traceweb.fr"
         }
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/validator": ">2.4"
+        "symfony/validator": ">=2.1,<2.4"
     },
     "autoload": {
         "psr-0": {
-            "WSColissimo\\Common": "src",
-            "WSColissimo\\WSColiPosteLetterReturnService": "src",
-            "WSColissimo\\WSColiPosteLetterService": "src",
-            "WSColissimo\\WSPointRetraitService": "src",
-            "WSColissimo\\WSSupervision": "src"
+            "WSColissimo\\WSColiPosteLetterService": "src"
         }
     }
 }

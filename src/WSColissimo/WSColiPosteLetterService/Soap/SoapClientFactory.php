@@ -27,7 +27,7 @@ class SoapClientFactory
         'ExpEnvVO'                   => '\WSColissimo\WSColiPosteLetterService\Request\ValueObject\ExpEnv',
         'LetterVO'                   => '\WSColissimo\WSColiPosteLetterService\Request\ValueObject\Letter',
         'Letter'                     => '\WSColissimo\WSColiPosteLetterService\Request\ValueObject\Letter',
-        // 'getLetterColissimo'         => '\WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest',
+        'getLetterColissimo'         => '\WSColissimo\WSColiPosteLetterService\Request\LetterColissimoRequest',
         'ReturnLetterVO'             => '\WSColissimo\WSColiPosteLetterService\Response\ValueObject\ReturnLetter',
         'getLetterColissimoResponse' => '\WSColissimo\WSColiPosteLetterService\Response\LetterColissimoResponse',
     );
@@ -86,7 +86,7 @@ class SoapClientFactory
     /**
      * Set type converter collection
      *
-     * @param TypeConverterCollection $typeConverters
+     * @param type $typeConverters Type converter collection
      *
      * @return SoapClientFactory
      */

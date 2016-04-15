@@ -1,7 +1,6 @@
 .buildpath
 .project
 .settings/
-.idea/
 
 sample/parameters.php
 composer.lock
