@@ -56,8 +56,6 @@ class Article
     public function setDescription($description)
     {
         $this->description = $description;
-
-        return $this;
     }
 
     /**
@@ -74,12 +72,10 @@ class Article
     public function setQuantite($quantite)
     {
         $this->quantite = $quantite;
-
-        return $this;
     }
 
     /**
-     * @return float
+     * @return the float
      */
     public function getPoids()
     {
@@ -92,12 +88,10 @@ class Article
     public function setPoids($poids)
     {
         $this->poids = $poids;
-
-        return $this;
     }
 
     /**
-     * @return float
+     * @return the float
      */
     public function getValeur()
     {
@@ -110,8 +104,6 @@ class Article
     public function setValeur($valeur)
     {
         $this->valeur = $valeur;
-
-        return $this;
     }
 
     /**
@@ -128,8 +120,6 @@ class Article
     public function setNumTarifaire($numTarifaire)
     {
         $this->numTarifaire = $numTarifaire;
-
-        return $this;
     }
 
     /**
@@ -146,8 +136,6 @@ class Article
     public function setPaysOrigine($paysOrigine)
     {
         $this->paysOrigine = $paysOrigine;
-
-        return $this;
     }
 
     /**
