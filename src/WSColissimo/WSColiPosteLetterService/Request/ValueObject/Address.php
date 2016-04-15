@@ -125,6 +125,8 @@ class Address
     public function setCompanyName($companyName)
     {
         $this->companyName = $companyName;
+
+        return $this;
     }
 
     /**
@@ -141,6 +143,8 @@ class Address
     public function setCivility($civility)
     {
         $this->civility = $civility;
+
+        return $this;
     }
 
     /**
@@ -157,6 +161,8 @@ class Address
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /**
@@ -173,6 +179,8 @@ class Address
     public function setSurname($surname)
     {
         $this->surname = $surname;
+
+        return $this;
     }
 
     /**
@@ -189,6 +197,8 @@ class Address
     public function setLine0($line0)
     {
         $this->line0 = $line0;
+
+        return $this;
     }
 
     /**
@@ -205,6 +215,8 @@ class Address
     public function setLine1($line1)
     {
         $this->line1 = $line1;
+
+        return $this;
     }
 
     /**
@@ -221,6 +233,8 @@ class Address
     public function setLine2($line2)
     {
         $this->line2 = $line2;
+
+        return $this;
     }
 
     /**
@@ -237,6 +251,8 @@ class Address
     public function setLine3($line3)
     {
         $this->line3 = $line3;
+
+        return $this;
     }
 
     /**
@@ -253,6 +269,8 @@ class Address
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
+        return $this;
     }
 
     /**
@@ -269,6 +287,8 @@ class Address
     public function setMobileNumber($mobileNumber)
     {
         $this->mobileNumber = $mobileNumber;
+
+        return $this;
     }
 
     /**
@@ -285,6 +305,8 @@ class Address
     public function setDoorCode1($doorCode1)
     {
         $this->doorCode1 = $doorCode1;
+
+        return $this;
     }
 
     /**
@@ -301,6 +323,8 @@ class Address
     public function setDoorCode2($doorCode2)
     {
         $this->doorCode2 = $doorCode2;
+
+        return $this;
     }
 
     /**
@@ -317,6 +341,8 @@ class Address
     public function setInterphone($interphone)
     {
         $this->interphone = $interphone;
+
+        return $this;
     }
 
     /**
@@ -333,6 +359,8 @@ class Address
     public function setCountry($country)
     {
         $this->country = $country;
+
+        return $this;
     }
 
     /**
@@ -349,6 +377,8 @@ class Address
     public function setCountryCode($countryCode)
     {
         $this->countryCode = $countryCode;
+
+        return $this;
     }
 
     /**
@@ -365,6 +395,8 @@ class Address
     public function setCity($city)
     {
         $this->city = $city;
+
+        return $this;
     }
 
     /**
@@ -381,6 +413,8 @@ class Address
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
     }
 
     /**
@@ -397,6 +431,8 @@ class Address
     public function setPostalCode($postalCode)
     {
         $this->postalCode = $postalCode;
+
+        return $this;
     }
 
     /**

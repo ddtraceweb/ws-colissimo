@@ -2,6 +2,8 @@
 
 namespace WSColissimo\WSColiPosteLetterService;
 
+use Symfony\Component\Validator\Validation;
+use WSColissimo\Common\Client;
 use WSColissimo\WSColiPosteLetterService\Soap\SoapClientFactory;
 
 /**
@@ -28,7 +30,20 @@ class ClientBuilder
     {
         $soapClientFactory = new SoapClientFactory();
         $soapClient = $soapClientFactory->create($this->wsdl);
+        $validator = $this->createValidator();
 
-        return new Client($soapClient);
+        return new Client($soapClient, $validator);
+    }
+
+    /**
+     * Create validator
+     *
+     * @return Symfony\Component\Validator\ValidatorInterface
+     */
+    protected function createValidator()
+    {
+        return Validation::createValidatorBuilder()
+            ->addMethodMapping('loadValidatorMetadata')
+            ->getValidator();
     }
 }

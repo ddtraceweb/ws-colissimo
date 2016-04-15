@@ -23,7 +23,7 @@ class DestEnv
     protected $alert;
 
     /**
-     * @var DestAddress
+     * @var AddressDest
      */
     protected $addressVO;
 
@@ -60,7 +60,7 @@ class DestEnv
     /**
      * Constructor
      *
-     * @param Address $address
+     * @param AddressDest $address
      */
     public function __construct(AddressDest $address = null)
     {
@@ -83,6 +83,8 @@ class DestEnv
     public function setRef($ref)
     {
         $this->ref = $ref;
+
+        return $this;
     }
 
     /**
@@ -99,10 +101,12 @@ class DestEnv
     public function setAlert($alert)
     {
         $this->alert = $alert;
+
+        return $this;
     }
 
     /**
-     * @return the DestAddress
+     * @return AddressDest
      */
     public function getAddressVO()
     {
@@ -115,10 +119,12 @@ class DestEnv
     public function setAddressVO($addressVO)
     {
         $this->addressVO = $addressVO;
+
+        return $this;
     }
 
     /**
-     * @return the boolean
+     * @return boolean
      */
     public function getCodeBarForreference()
     {
@@ -131,10 +137,12 @@ class DestEnv
     public function setCodeBarForreference($codeBarForreference)
     {
         $this->codeBarForreference = $codeBarForreference;
+
+        return $this;
     }
 
     /**
-     * @return the boolean
+     * @return boolean
      */
     public function getDeliveryError()
     {
@@ -147,6 +155,8 @@ class DestEnv
     public function setDeliveryError($deliveryError)
     {
         $this->deliveryError = $deliveryError;
+
+        return $this;
     }
 
     /**
@@ -163,6 +173,8 @@ class DestEnv
     public function setDeliveryInfoLine1($deliveryInfoLine1)
     {
         $this->deliveryInfoLine1 = $deliveryInfoLine1;
+
+        return $this;
     }
 
     /**
@@ -179,6 +191,8 @@ class DestEnv
     public function setDeliveryInfoLine2($deliveryInfoLine2)
     {
         $this->deliveryInfoLine2 = $deliveryInfoLine2;
+
+        return $this;
     }
 
     /**
@@ -195,6 +209,8 @@ class DestEnv
     public function setServiceInfo($serviceInfo)
     {
         $this->serviceInfo = $serviceInfo;
+
+        return $this;
     }
 
     /**
@@ -211,6 +227,8 @@ class DestEnv
     public function setPromotionCode($promotionCode)
     {
         $this->promotionCode = $promotionCode;
+
+        return $this;
     }
 
     /**

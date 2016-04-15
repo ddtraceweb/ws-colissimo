@@ -126,6 +126,8 @@ class Parcel
     public function setInsuranceRange($insuranceRange)
     {
         $this->insuranceRange = $insuranceRange;
+
+        return $this;
     }
 
     /**
@@ -142,6 +144,8 @@ class Parcel
     public function setTypeGamme($typeGamme)
     {
         $this->typeGamme = $typeGamme;
+
+        return $this;
     }
 
     /**
@@ -158,6 +162,8 @@ class Parcel
     public function setParcelNumber($parcelNumber)
     {
         $this->parcelNumber = $parcelNumber;
+
+        return $this;
     }
 
     /**
@@ -174,6 +180,8 @@ class Parcel
     public function setReturnTypeChoice($returnTypeChoice)
     {
         $this->returnTypeChoice = $returnTypeChoice;
+
+        return $this;
     }
 
     /**
@@ -190,6 +198,8 @@ class Parcel
     public function setInsuranceAmount($insuranceAmount)
     {
         $this->insuranceAmount = $insuranceAmount;
+
+        return $this;
     }
 
     /**
@@ -206,6 +216,8 @@ class Parcel
     public function setInsuranceValue($insuranceValue)
     {
         $this->insuranceValue = $insuranceValue;
+
+        return $this;
     }
 
     /**
@@ -222,6 +234,8 @@ class Parcel
     public function setRecommendationLevel($recommendationLevel)
     {
         $this->recommendationLevel = $recommendationLevel;
+
+        return $this;
     }
 
     /**
@@ -238,6 +252,8 @@ class Parcel
     public function setRecommendationAmount($recommendationAmount)
     {
         $this->recommendationAmount = $recommendationAmount;
+
+        return $this;
     }
 
     /**
@@ -254,6 +270,8 @@ class Parcel
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
+        return $this;
     }
 
     /**
@@ -270,6 +288,8 @@ class Parcel
     public function setHorsGabarit($horsGabarit)
     {
         $this->horsGabarit = $horsGabarit;
+
+        return $this;
     }
 
     /**
@@ -286,6 +306,8 @@ class Parcel
     public function setHorsGabaritAmount($horsGabaritAmount)
     {
         $this->horsGabaritAmount = $horsGabaritAmount;
+
+        return $this;
     }
 
     /**
@@ -302,6 +324,8 @@ class Parcel
     public function setDeliveryMode($deliveryMode)
     {
         $this->deliveryMode = $deliveryMode;
+
+        return $this;
     }
 
     /**
@@ -318,6 +342,8 @@ class Parcel
     public function setReturnReceipt($returnReceipt)
     {
         $this->returnReceipt = $returnReceipt;
+
+        return $this;
     }
 
     /**
@@ -334,6 +360,8 @@ class Parcel
     public function setRecommendation($recommendation)
     {
         $this->recommendation = $recommendation;
+
+        return $this;
     }
 
     /**
@@ -350,6 +378,8 @@ class Parcel
     public function setInstructions($instructions)
     {
         $this->instructions = $instructions;
+
+        return $this;
     }
 
     /**
@@ -366,6 +396,8 @@ class Parcel
     public function setRegateCode($regateCode)
     {
         $this->regateCode = $regateCode;
+
+        return $this;
     }
 
     /**
@@ -382,6 +414,8 @@ class Parcel
     public function setContents(array $contents)
     {
         $this->contents = $contents;
+
+        return $this;
     }
 
     /**
@@ -392,6 +426,8 @@ class Parcel
     public function addContent(Content $content)
     {
         $this->contents[] = $content;
+
+        return $this;
     }
 
     /**

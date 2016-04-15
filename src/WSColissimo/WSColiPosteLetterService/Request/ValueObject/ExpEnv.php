@@ -52,6 +52,8 @@ class ExpEnv
     public function setRef($ref)
     {
         $this->ref = $ref;
+
+        return $this;
     }
 
     /**
@@ -68,6 +70,8 @@ class ExpEnv
     public function setAlert($alert)
     {
         $this->alert = $alert;
+
+        return $this;
     }
 
     /**
@@ -84,6 +88,8 @@ class ExpEnv
     public function setAddressVO($addressVO)
     {
         $this->addressVO = $addressVO;
+
+        return $this;
     }
 
     /**

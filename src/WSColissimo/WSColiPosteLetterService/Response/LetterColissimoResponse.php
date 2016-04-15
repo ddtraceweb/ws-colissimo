@@ -2,6 +2,7 @@
 
 namespace WSColissimo\WSColiPosteLetterService\Response;
 
+use WSColissimo\Common\Response\ResponseInterface;
 use WSColissimo\WSColiPosteLetterService\Response\ValueObject\ReturnLetter;
 
 /**
@@ -9,7 +10,7 @@ use WSColissimo\WSColiPosteLetterService\Response\ValueObject\ReturnLetter;
  *
  * @author @author Nicolas Cabot <n.cabot@lexik.fr>
  */
-class LetterColissimoResponse
+class LetterColissimoResponse implements ResponseInterface
 {
     /**
      * @var ReturnLetter

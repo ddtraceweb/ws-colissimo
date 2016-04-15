@@ -134,7 +134,7 @@ class ServiceCallContext
      */
     public function getDateDeposite()
     {
-        return $this->dateDeposite;
+        return $this->dateDeposite->format('Y-m-d\TH-i-s.\0\0\0\Z');;
     }
 
     /**
